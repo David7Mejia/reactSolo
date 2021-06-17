@@ -10,6 +10,7 @@ const setTokenCookie = (res, user) => {
     // Create the token.
     const token = jwt.sign(
         { data: user.toSafeObject() },
+        //This method will return an object with only the User instance information that is safe to save to a JWT.
         secret,
         { expiresIn: parseInt(expiresIn) }, // 604,800 seconds = 1 week
     );
