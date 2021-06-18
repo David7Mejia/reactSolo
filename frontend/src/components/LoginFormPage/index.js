@@ -50,7 +50,11 @@ function LoginFormPage() {
                     required
                 />
             </label>
-            <button type="submit">Log In</button>
+            <div>
+            <i class="fas fa-sign-in-alt"></i>
+            <button type="submit" >Log In
+            </button>
+            </div>
         </form>
     );
 }
