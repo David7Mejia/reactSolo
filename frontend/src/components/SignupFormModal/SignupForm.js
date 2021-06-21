@@ -9,6 +9,7 @@ function SignupForm() {
     const sessionUser = useSelector((state) => state.session.user);
     const [email, setEmail] = useState("");
     const [username, setUsername] = useState("");
+    const [firstName, setFirstName] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [errors, setErrors] = useState([]);
@@ -19,7 +20,7 @@ function SignupForm() {
         e.preventDefault();
         if (password === confirmPassword) {
             setErrors([]);
-            return dispatch(sessionActions.signup({ email, username, password }))
+            return dispatch(sessionActions.signup({ email, firstName, password, username }))
                 .catch(async (res) => {
                     const data = await res.json();
                     if (data && data.errors) setErrors(data.errors);
@@ -42,7 +43,8 @@ function SignupForm() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                />
+                    />
+                    <br/>
             </label>
             <label>
                 Username
@@ -52,6 +54,17 @@ function SignupForm() {
                     onChange={(e) => setUsername(e.target.value)}
                     required
                     />
+                    <br/>
+            </label>
+            <label>
+                First Name
+                <input
+                    type="text"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    required
+                    />
+                    <br/>
             </label>
             <label>
                 Password
@@ -61,7 +74,8 @@ function SignupForm() {
                     onChange={(e) => setPassword(e.target.value)}
                     required
                     />
-            </label>
+                </label>
+                <br/>
             <label>
                 Confirm Password
                 <input
@@ -70,6 +84,7 @@ function SignupForm() {
                     onChange={(e) => setConfirmPassword(e.target.value)}
                     required
                     />
+                    <br/>
             </label>
             <button type="submit">Sign Up</button>
         </form>

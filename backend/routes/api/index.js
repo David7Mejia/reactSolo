@@ -2,10 +2,11 @@
 const router = require('express').Router();
 const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
-const userFeed = require('./feed')
+const userFeed = require('./feed.js')
 router.use('/session', sessionRouter);
 
 router.use('/users', usersRouter);
+router.use('/feed', userFeed)
 
 // router.use('/feed', userFeed)
 module.exports = router;
