@@ -2,10 +2,10 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
-import SignupFormPage from "./components/SignupFormPage";
+import SignupForm from "./components/SignupFormModal";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
-
+import Homepage from "./components/Homepage";
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -19,10 +19,11 @@ function App() {
       {isLoaded && (
         <Switch>
           <Route path="/signup">
-            <SignupFormPage />
+            <SignupForm />
           </Route>
         </Switch>
       )}
+      <Homepage />
     </>
   );
 }
