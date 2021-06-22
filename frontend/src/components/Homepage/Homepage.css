@@ -1,19 +1,42 @@
 body {
   margin: 0;
 }
-.img1 {
-  background-image: url("../../images/img1.jpg");
+.img1, .img2, .img3, .home-form {
   background-size: 100%;
   background-repeat: no-repeat;
   height: 100vh;
+
+}
+.img1 {
+  background-image: url("../../images/img1.jpg");
+  animation: slide 15s infinite;
+}
+.img2 {
+  background-image: url("../../images/img2.jpg");
+}
+.img3 {
+  background-image: url("../../images/img3.jpg");
 }
 
 .home-form {
   background-image: url("../../images/img6.jpg");
-  background-size: 100%;
+  /* background-size: 100%;
   background-repeat: no-repeat;
-  height: 100vh;
-
+  height: 100vh; */
 }
 
+/* @keyframes slide {
+  25%{
+      background-image: url("../../images/img2.jpg");
+  }
+  50%{
+      background-image: url("../../images/img3.jpg");
+  }
+  75%{
+      background-image: url("../../images/img4.jpg");
+  }
+  100%{
+      background-image: url("../../images/img1.jpg");
+  }
+} */
 
