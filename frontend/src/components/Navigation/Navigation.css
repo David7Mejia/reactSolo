@@ -1,27 +1,66 @@
 .nav_bar {
-    display: grid;
-    grid-template-areas:
-    "left mid-l mid-r right";
-    grid-template-rows: 5% 45% 45% 5%;
-    grid-template-columns: auto;
-    background-color: #202023;
-    height: 50px;
-    width: 100%;
-    font-size: 18px;
-    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    font-family: "Proxima Nova", "helvetica neue", helvetica, arial, sans-serif;
+  padding-top: 1%;
+  display: inline;
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 50px;
+  width: 100%;
+  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  font-family: "Proxima Nova", "helvetica neue", helvetica, arial, sans-serif;
 }
 .drop_menu {
   display: flex;
   justify-content: flex-end;
   padding-right: 4%;
 }
+.nav_buttons {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-left: 5%;
+  margin-right: 5%;
+  font-size: 30px;
+}
+.nav_buttons a {
+  color: white;
+  text-decoration: none;
+}
+.btns {
+  display: flex;
+  flex-direction: row;
+}
+.btn_signup{
+  margin-left: 10px;
+}
 
 .nav_items {
-    width: 100%;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.nav_items a {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  margin-left: 10%;
+  font-size: 30px;
+}
+
+.nav_search {
+  background-color: blue;
+  background-size: 17px;
+  background-repeat: no-repeat;
+  background-position-x: 10px;
+  background-position-y: 7px;
+  height: 35.2px;
+  background-color: white;
+  padding: 7.8px 9.1px 7.8px 32px;
+  width: 100%;
+  margin: 0;
+  border: 1px solid #bbc0c4;
+  border-radius: 3px;
+  font-family: inherit;
+  max-width: 638px;
 }

@@ -9,7 +9,9 @@ module.exports = (sequelize, DataTypes) => {
     keywords: DataTypes.TEXT
   }, {});
   Image.associate = function(models) {
-    // associations can be defined here
+    Image.belongsTo(models.User, {foreignKey: 'user_id'})
+    // Image.belongsTo(models.Collection, {foreignKey: 'collections_id'})
+    Image.belongsTo(models.Bookmark, {foreignKey: 'image_id'})
   };
   return Image;
 };

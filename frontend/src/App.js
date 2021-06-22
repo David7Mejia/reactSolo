@@ -1,12 +1,11 @@
 // frontend/src/App.js
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import SignupForm from "./components/SignupFormModal";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Homepage from "./components/Homepage";
-import Feed from './components/Feed'
 
 
 
@@ -18,7 +17,7 @@ function App() {
   }, [dispatch]);
 
   return (
-    <>
+      <>
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
@@ -26,12 +25,11 @@ function App() {
             <SignupForm />
           </Route>
           </Switch>
-      )}
-      <Homepage />
-
-
-    </>
+        )}
+        <Homepage />
+      </>
   );
+
 }
 
 export default App;

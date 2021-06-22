@@ -1,19 +1,28 @@
 import { useEffect } from 'react';
 import './Homepage.css';
+import { useDispatch, useSelector } from "react-redux";
+import { Redirect } from 'react-router-dom'
+// import Navigation from "./Navigation/index";
+
 
 function Homepage() {
+  const loggedIn = useSelector(state => state.session).user;
 
-    // useEffect(() => {
-    //     const arr = ['img1']
-    //     setInterval(() => {
-    //         const imgClass =
-    //     }, 1000)
-    // })
 
-    return (
-        <div className='img1' >
-         </div>
-)
+    if (loggedIn) {
+        return (
+            <>
+                <div className='home'></div>
+            </>
+        )
+    } else {
+        return (
+            <div className='img1' >
+             </div>
+    )
+
+    }
+
 
 }
 

@@ -7,7 +7,8 @@ module.exports = (sequelize, DataTypes) => {
     keywords: DataTypes.TEXT
   }, {});
   Collection.associate = function(models) {
-    // associations can be defined here
+    Collection.belongsTo(models.User, {foreignKey: 'user_id'})
+    Collection.hasMany(models.Image, {foreignKey: 'image_url'})
   };
   return Collection;
 };

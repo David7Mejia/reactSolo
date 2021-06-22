@@ -1,6 +1,14 @@
+body {
+  margin: 0;
+}
 .img1 {
   background-image: url("../../images/img1.jpg");
   background-size: 100%;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
 
-  height: 90vh;
+.home {
+  background-color: white;
+  height: 1000px;
 }

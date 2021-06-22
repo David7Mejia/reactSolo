@@ -9,10 +9,15 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       user_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {model: 'Users'}
+      },
+      image_id: {
+        type: Sequelize.INTEGER,
+        references: {model: 'Images'}
       },
       title: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       location: {
         type: Sequelize.STRING

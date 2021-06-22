@@ -5,7 +5,8 @@ module.exports = (sequelize, DataTypes) => {
     image_id: DataTypes.INTEGER
   }, {});
   Bookmark.associate = function(models) {
-    // associations can be defined here
+    Bookmark.belongsTo(models.User, {foreginKey: 'user_id'})
+    Bookmark.hasMany(models.Image, {foreginKey: 'image_url'})
   };
   return Bookmark;
 };

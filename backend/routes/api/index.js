@@ -6,7 +6,7 @@ const userFeed = require('./feed.js')
 router.use('/session', sessionRouter);
 
 router.use('/users', usersRouter);
-router.use('/feed', userFeed)
+// router.use('/feed', userFeed)
 
 // router.use('/feed', userFeed)
 module.exports = router;
