@@ -6,7 +6,7 @@ import SignupForm from "./components/SignupFormModal";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Homepage from "./components/Homepage";
-
+import Upload from "./components/Upload";
 
 
 function App() {
@@ -17,7 +17,9 @@ function App() {
   }, [dispatch]);
 
   return (
-      <>
+    <>
+      <div>
+
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
@@ -26,7 +28,10 @@ function App() {
           </Route>
           </Switch>
         )}
+      </div>
+      <div>
         <Homepage />
+      </div>
       </>
   );
 

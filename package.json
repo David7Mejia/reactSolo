@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/David7Mejia/reactSolo/issues"
   },
-  "homepage": "https://github.com/David7Mejia/reactSolo#readme"
+  "homepage": "https://github.com/David7Mejia/reactSolo#readme",
+  "dependencies": {
+    "react-slideshow-image": "^3.4.7"
+  }
 }

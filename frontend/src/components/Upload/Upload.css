@@ -1,0 +1,16 @@
+.upload-form {
+    position: relative;
+    margin-left: 300px;
+    /* margin-top: 300px; */
+    top: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    /* padding-top: 300px; */
+    /* background-color: blue; */
+    width: 400px;
+    height: 200px;
+    background-color: white;
+}
