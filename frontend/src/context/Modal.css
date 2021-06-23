@@ -1,4 +1,8 @@
 /* frontend/src/context/Modal.css */
+body {
+    font-family: Proxima Nova,Helvetica,sans-serif;
+
+}
 #modal {
   position: fixed;
   top: 0;
@@ -22,4 +26,5 @@
 #modal-content {
   position: absolute;
   background-color:white;
+  border-radius: 8px;
 }

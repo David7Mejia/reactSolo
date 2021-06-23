@@ -37,18 +37,21 @@ function SignupForm() {
                 {errors.map((error, idx) => <li key={idx}>{error}</li>)}
             </ul>
             <label>
-                Email
-                <input
+                    {/* Email */}
+                    Join Us
+                    <br/>
+                    <input
+                        placeholder='Email'
                     type="text"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
                     />
-                    <br/>
             </label>
             <label>
-                Username
-                <input
+                {/* Username */}
+                    <input
+                        placeholder='Username'
                     type="text"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
@@ -57,8 +60,9 @@ function SignupForm() {
                     <br/>
             </label>
             <label>
-                First Name
-                <input
+                {/* First Name */}
+                    <input
+                        placeholder='First Name'
                     type="text"
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
@@ -67,18 +71,20 @@ function SignupForm() {
                     <br/>
             </label>
             <label>
-                Password
-                <input
+                {/* Password */}
+                    <input
+                        placeholder='Password'
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
                     />
                 </label>
-                <br/>
+                {/* <br/> */}
             <label>
-                Confirm Password
-                <input
+                {/* Confirm Password */}
+                    <input
+                        placeholder='Confirm Password'
                     type="password"
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
