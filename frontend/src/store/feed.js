@@ -1,29 +1,28 @@
-// frontend/src/store/session.js
 import { csrfFetch } from './csrf';
 
-const POST_IMAGE = 'upload/POST_IMAGE';
+const GET_IMAGES = 'feed/GET_IMAGES'
 
-const postImage = (img) => ({
-    type: POST_IMAGE,
+const getImages = (img) => ({
+    type: GET_IMAGES,
     img
 })
 
 export const uploadImage = (payload) => async (dispatch) => {
-    const res = await csrfFetch('api/images', {
-        method: 'POST',
+    const res = await csrfFetch('api/get-images', {
+        method: 'GET',
         body: JSON.stringify(payload),
     })
 
     if (res.ok) {
-        const newImg = await res.json();
-        dispatch(postImage(newImg));
-        return newImg
+        const feedImg = await res.json();
+        dispatch(postImage(feedImg));
+        return feedImg
     }
 }
 
 const initialState = {}
 
-const imgReducer = (state = initialState, action) => {
+const feedReducer = (state = initialState, action) => {
     let newState = {}
 
     switch (action.type) {
@@ -38,4 +37,4 @@ const imgReducer = (state = initialState, action) => {
     }
 }
 
-export default imgReducer
+export default feedReducer

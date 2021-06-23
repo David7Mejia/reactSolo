@@ -16,4 +16,10 @@ router.post('/', asyncHandler(async (req, res, next) => {
     }),
 );
 
+router.get('/', asyncHandler(async (req, res, next) => {
+    const photos = await Image.findAll();
+    res.json(photos)
+}),
+);
+
 module.exports = router
