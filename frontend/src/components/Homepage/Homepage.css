@@ -25,7 +25,7 @@ body {
   height: 100vh; */
 }
 
-/* @keyframes slide {
+@keyframes slide {
   25%{
       background-image: url("../../images/img2.jpg");
   }
@@ -38,5 +38,5 @@ body {
   100%{
       background-image: url("../../images/img1.jpg");
   }
-} */
+}
 

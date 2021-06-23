@@ -24,11 +24,14 @@
 .nav_buttons a {
   color: white;
   text-decoration: none;
+  transition-duration: 0.4s;
+
 }
 .btns {
   display: flex;
   flex-direction: row;
   font-size: 15px;
+
 
 }
 .btn_signup{

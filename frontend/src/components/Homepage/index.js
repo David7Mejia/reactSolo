@@ -10,18 +10,6 @@ import {Route, Switch} from 'react-router-dom'
 
 
 function Homepage() {
-    // useEffect(() => {
-
-    //     let slide = document.getElementById('img-slide')
-    //     let arr = ['img1', 'img2', 'img3']
-
-    //     setInterval(() => {
-    //         let first = arr.shift();
-    //         arr.push(first);
-    //         slide.className = first;
-    //     }, 2000)
-    // }, [])
-
 
     // const dispatch = useDispatch();
     const loggedIn = useSelector(state => state.session).user;
@@ -39,24 +27,7 @@ function Homepage() {
         )
     } else {
         return (
-            // <div  className='' id='img-slide'></div>
             <div  className='img1'></div>
-            // <div>
-            //     <Slide easing="ease">
-            //         <div className="each-slide ">
-            //             <div className='img1'>
-            //             </div>
-            //         </div>
-            //         <div className="each-slide">
-            //             <div className='img2' >
-            //             </div>
-            //         </div>
-            //         <div className="each-slide">
-            //             <div className='img3' >
-            //             </div>
-            //         </div>
-            //     </Slide>
-            // </div>
         )
     };
 
