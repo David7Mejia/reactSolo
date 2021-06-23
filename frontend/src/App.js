@@ -6,6 +6,7 @@ import SignupForm from "./components/SignupFormModal";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Homepage from "./components/Homepage";
+import './index.css'
 // import Upload from "./components/Upload";
 
 
@@ -29,7 +30,7 @@ function App() {
           </Switch>
         )}
       </div>
-      <div>
+      <div >
         <Homepage />
       </div>
       </>

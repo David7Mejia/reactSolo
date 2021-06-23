@@ -4,3 +4,21 @@
     background-color: blue;
     /* background-image: url(); */
 }
+.test{
+display: flex;
+justify-content: center;
+flex-direction: column-reverse;
+align-content: center;
+flex-wrap: wrap;
+width: 100vw;
+}
+.feed-img {
+    margin-top: 70px;
+    width: 750px;
+}
+.feed-container {
+    width: 800px;
+    display: flex;
+    justify-content: center;
+    top: 70px;
+}

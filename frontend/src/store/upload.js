@@ -54,10 +54,9 @@ const initialState = {}
 
 const imgReducer = (state = initialState, action) => {
     let newState = {}
-
     switch (action.type) {
         case POST_IMAGE:
-            newState = {
+             newState = {
                 ...state,
                 [action.img.id]: action.img
             }
