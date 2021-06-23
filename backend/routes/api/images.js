@@ -18,8 +18,26 @@ router.post('/', asyncHandler(async (req, res, next) => {
 
 router.get('/', asyncHandler(async (req, res, next) => {
     const photos = await Image.findAll();
-    res.json(photos)
+    return res.json(photos)
 }),
 );
+
+router.put('/', asyncHandler(async (req, res) => {
+    const { image_url, user_id, description, id } = req.body;
+
+    const photo = await Image.findByPk(id);
+    let updImg = await photo.update({ image_url, user_id, description });
+    res.json(updImg)
+}))
+
+router.delete('/:id', asyncHandler(async (req, res) => {
+    const { id } = req.body
+
+    const del = await Image.destroy({
+        where: { id }
+    })
+    res.json(del)
+}))
+
 
 module.exports = router

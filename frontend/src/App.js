@@ -1,12 +1,12 @@
 // frontend/src/App.js
 import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { Route, Switch } from "react-router-dom";
 import SignupForm from "./components/SignupFormModal";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Homepage from "./components/Homepage";
-import Upload from "./components/Upload";
+// import Upload from "./components/Upload";
 
 
 function App() {

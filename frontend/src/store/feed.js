@@ -1,40 +1,41 @@
-import { csrfFetch } from './csrf';
+// import { csrfFetch } from './csrf';
 
-const GET_IMAGES = 'feed/GET_IMAGES'
+// const GET_IMAGES = 'feed/GET_IMAGES'
 
-const getImages = (img) => ({
-    type: GET_IMAGES,
-    img
-})
 
-export const uploadImage = (payload) => async (dispatch) => {
-    const res = await csrfFetch('api/get-images', {
-        method: 'GET',
-        body: JSON.stringify(payload),
-    })
+// const getImages = (img) => ({
+//     type: GET_IMAGES,
+//     img
+// })
 
-    if (res.ok) {
-        const feedImg = await res.json();
-        dispatch(postImage(feedImg));
-        return feedImg
-    }
-}
+// export const uploadImage = (payload) => async (dispatch) => {
+//     const res = await csrfFetch('api/get-images', {
+//         method: 'GET',
+//         body: JSON.stringify(payload),
+//     })
 
-const initialState = {}
+//     if (res.ok) {
+//         const feedImg = await res.json();
+//         dispatch(postImage(feedImg));
+//         return feedImg
+//     }
+// }
 
-const feedReducer = (state = initialState, action) => {
-    let newState = {}
+// const initialState = {}
 
-    switch (action.type) {
-        case POST_IMAGE:
-            newState = {
-                ...state,
-                [action.img.id]: action.img
-            }
-            return newState
-        default:
-            return state;
-    }
-}
+// const feedReducer = (state = initialState, action) => {
+//     let newState = {}
 
-export default feedReducer
+//     switch (action.type) {
+//         case POST_IMAGE:
+//             newState = {
+//                 ...state,
+//                 [action.img.id]: action.img
+//             }
+//             return newState
+//         default:
+//             return state;
+//     }
+// }
+
+// export default feedReducer

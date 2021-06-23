@@ -13,7 +13,8 @@ module.exports = {
         references: {model: 'Users'}
       },
       collections_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        referencer: {model: 'Collections'}
       },
       image_url: {
         type: Sequelize.STRING

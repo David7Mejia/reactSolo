@@ -10,8 +10,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Image.associate = function(models) {
     Image.belongsTo(models.User, {foreignKey: 'user_id'})
-    // Image.belongsTo(models.Collection, {foreignKey: 'collections_id'})
-    Image.belongsTo(models.Bookmark, {foreignKey: 'image_id'})
+    Image.belongsTo(models.Collection, {foreignKey: 'collections_id'})
   };
   return Image;
 };

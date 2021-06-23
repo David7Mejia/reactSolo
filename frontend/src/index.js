@@ -10,7 +10,7 @@ import { ModalProvider } from "./context/Modal";
 import configureStore from "./store";
 import { restoreCSRF, csrfFetch } from "./store/csrf";
 import * as sessionActions from "./store/session";
-import * as uploadActions from "./store/upload"
+import * as uploadActions from "./store/upload";
 
 const store = configureStore();
 

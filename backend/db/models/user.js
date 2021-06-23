@@ -55,7 +55,6 @@ module.exports = (sequelize, DataTypes) => {
     User.hasMany(models.Image, {foreignKey: 'user_id'})
     User.hasMany(models.Collection, {foreignKey: 'user_id'})
     User.hasMany(models.Comment, {foreignKey: 'user_id'})
-    User.hasMany(models.Bookmark, {foreignKey: 'user_id'})
   };
   User.prototype.toSafeObject = function () { // remember, this cannot be an arrow function
     const { id, username, firstName, email } = this; // context will be the User instance

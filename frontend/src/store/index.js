@@ -6,7 +6,8 @@ import imgReducer from './upload'
 
 const rootReducer = combineReducers({
   session: sessionReducer,
-  img: imgReducer
+  img: imgReducer,
+  
 });
 
 let enhancer;

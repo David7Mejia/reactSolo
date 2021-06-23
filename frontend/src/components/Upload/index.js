@@ -1,10 +1,10 @@
 import './Upload.css'
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import * as uploadActions from "../../store/upload";
-import * as sessionActions from "../../store/session";
-import {useHistory, Link} from 'react-router-dom'
-import Homepage from '../Homepage'
+// import * as sessionActions from "../../store/session";
+import {useHistory} from 'react-router-dom'
+// import Homepage from '../Homepage'
 
 
 
@@ -24,15 +24,16 @@ function Upload() {
         e.preventDefault();
         let user_id = sessionUser.id;
         history.push('/')
-        return dispatch(uploadActions.uploadImage({ image_url, user_id, description }))
+        return dispatch(uploadActions.postImageThunk({ image_url, user_id, description }))
     }
     return (
 
         <form onSubmit={onSubmit} className='upload-form'>
             <label>
-                Image URL
+                Upload an Image
                 <br />
                 <input
+                    placeholder='Image URL'
                     className='form-input-url'
                     type='text'
                     value={image_url}
@@ -42,9 +43,8 @@ function Upload() {
             </label>
             <br />
             <label>
-                Description
-                <br />
                 <textarea
+                    placeholder='Description'
                     type='text'
                     value={description}
                     onChange={e => setDescription(e.target.value)}
