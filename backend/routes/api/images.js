@@ -18,7 +18,10 @@ router.post('/', asyncHandler(async (req, res, next) => {
 );
 
 router.get('/:id', asyncHandler(async (req, res) => {
-    
+    const id = parseInt(req.params.id);
+    const photo = await Image.findByPk(id)
+
+    return res.json(photo)
 }))
 
 
@@ -44,6 +47,8 @@ router.delete('/:id', asyncHandler(async (req, res) => {
     })
     res.json(del)
 }))
-
+//dispatch to in helper function
+//before useeffect then dispatch
+//setstate true
 
 module.exports = router

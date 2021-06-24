@@ -1,0 +1,44 @@
+.img-container {
+    position: relative;
+    top: 100px;
+    /* background-color: blue; */
+    width: 100vw;
+    height: 500px;
+    display: flex;
+    justify-content:center;
+    /* flex-wrap: wrap; */
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 300px
+    /* background-color: white; */
+}
+
+.img-post{
+    height: auto;
+    width: 65%;
+}
+
+.wrapper-post {
+    /* background-color: white; */
+    width: 100vw;
+    display: flex;
+    /* flex-direction: column; */
+    /* background-color:red; */
+}
+
+.post-description {
+    display: flex;
+    background-color: red;
+    height: 200px;
+    width: 200px;
+}
+
+/* .test1{
+display: flex;
+justify-content: center;
+flex-direction: column-reverse;
+align-content: center;
+flex-wrap: wrap;
+width: 97vw;
+} */

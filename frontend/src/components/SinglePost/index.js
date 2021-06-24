@@ -1,0 +1,36 @@
+import './SinglePost.css'
+import { useEffect } from 'react'
+import { useParams } from 'react-router'
+import { useSelector, useDispatch } from 'react-redux'
+import { getPostThunk } from '../../store/upload'
+
+function SinglePost() {
+    const dispatch = useDispatch()
+    // const loggedIn = useSelector(state => state.session.user);
+    const feedPhotos = useSelector(state => (state.img));
+    const { id } = useParams();
+    const img = feedPhotos[id]
+
+
+    useEffect(() => {
+        dispatch(getPostThunk(id))
+    }, [dispatch])
+
+    return (
+        <div className="test1">
+            <div>
+
+        <div className="wrapper-post">
+
+                <div className="img-container">
+                    <img src={img?.image_url} className="img-post" />
+                        <div className="post-description">jaskldjasdadasdasdasd</div>
+                </div>
+        </div>
+
+            </div>
+        </div>
+    )
+}
+
+export default SinglePost

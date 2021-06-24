@@ -1,12 +1,11 @@
 // frontend/src/components/Navigation/index.js
 import React from 'react';
-import { NavLink, Route } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import './Navigation.css';
 import SignUpFormModal from '../SignupFormModal';
-import Upload from '../Upload';
 
 function Navigation({ isLoaded }) {
     const sessionUser = useSelector(state => state.session.user);
@@ -25,8 +24,7 @@ function Navigation({ isLoaded }) {
                         </label>
                 <div className='btns'>
                     <NavLink to='/upload-image' className='upload-container'>
-                        <div className='upload'>
-                    </div>
+                        <div className='upload'></div>
                     </NavLink>
                 <ProfileButton user={sessionUser} />
                 </div>

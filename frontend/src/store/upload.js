@@ -3,19 +3,23 @@ import { csrfFetch } from './csrf';
 const POST_IMAGE = 'upload/POST_IMAGE';
 const GET_FEED = 'upload/GET_FEED';
 const DELETE_IMAGE = 'upload/DELETE_IMAGE'
+const GET_POST = 'upload/GET_POST'
+
 
 export const getFeed = (img) => ({
     type: GET_FEED,
     img
 })
-
 export const postImage = (img) => ({
     type: POST_IMAGE,
     img
 })
-
-export const deleteImage = (img) => ({
+export const deleteImage = (id) => ({
     type: DELETE_IMAGE,
+    id
+})
+export const getPost = (img) => ({
+    type: GET_POST,
     img
 })
 
@@ -39,14 +43,22 @@ export const getFeedThunk = () => async(dispatch) => {
         dispatch(getFeed(allImages))
     }
 }
+export const getPostThunk = id => async (dispatch) => {
+    const res = await csrfFetch(`/api/images/${id}`);
 
-export const deleteImageThunk = payload => async (dispatch) => {
-    const res = await csrfFetch('/api/images', {
+    if (res.ok) {
+        const image = await res.json();
+        dispatch(getPost(image))
+    }
+}
+export const deleteImageThunk = id => async (dispatch) => {
+    const res = await csrfFetch(`/api/images/${id}`, {
         method: 'DELETE',
-        body: JSON.stringify(payload)
     })
     if (res.ok) {
-        dispatch(deleteImage(payload))
+        await res.json()
+        dispatch(deleteImage(id))
+        return res
     }
 }
 
@@ -68,8 +80,14 @@ const imgReducer = (state = initialState, action) => {
             return { ...state, ...newState }
         case DELETE_IMAGE:
             newState = { ...state }
-            delete newState.img[action.img.id]
+            delete newState.img[action.id]//action.img.id
             return newState
+        case GET_POST:
+            newState[action.img.id] = action.img
+            return {
+                ...state,
+                ...newState
+            }
         default:
             return state;
     }

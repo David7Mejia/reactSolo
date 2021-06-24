@@ -68,9 +68,11 @@ grid-template-areas:
     color:#313131;
     transition-duration: 1s;
     grid-area: right;
-    width: 100px;
-   /* justify-content: flex-end; */
+    width: 80px;
    margin-bottom: 5px;
+   text-decoration: none;
+   font-size: 13px;
+   text-align: center;
 }
 
 .delete-btn:hover {
