@@ -12,6 +12,9 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: {model: 'Users'}
       },
+      username: {
+        type: Sequelize.STRING(20)
+      },
       collections_id: {
         type: Sequelize.INTEGER,
         referencer: {model: 'Collections'}
