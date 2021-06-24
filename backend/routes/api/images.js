@@ -5,10 +5,11 @@ const router = express.Router();
 const { Image, User } = require('../../db/models')
 
 router.post('/', asyncHandler(async (req, res, next) => {
-    const { user_id, image_url, description } = req.body;
+    const { user_id, image_url, username, description } = req.body;
 
     let myPost = await Image.create({
         user_id,
+        username,
         image_url,
         description,
     })
@@ -23,10 +24,10 @@ router.get('/', asyncHandler(async (req, res, next) => {
 );
 
 router.put('/', asyncHandler(async (req, res) => {
-    const { image_url, user_id, description, id } = req.body;
+    const { image_url, user_id, description, id, username } = req.body;
 
     const photo = await Image.findByPk(id);
-    let updImg = await photo.update({ image_url, user_id, description });
+    let updImg = await photo.update({ image_url, user_id, username, description, id });
     res.json(updImg)
 }))
 
