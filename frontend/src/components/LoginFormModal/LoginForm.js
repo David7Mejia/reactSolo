@@ -44,7 +44,9 @@ function LoginForm() {
                 </label>
             <label>
                     <br />
-                <input
+                    <input
+                    className='password'
+
                     type="password"
                     value={password}
                         onChange={(e) => setPassword(e.target.value)}

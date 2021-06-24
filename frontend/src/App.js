@@ -7,6 +7,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Homepage from "./components/Homepage";
 import './index.css'
+import Upload from "./components/Upload/";
 // import Upload from "./components/Upload";
 
 
@@ -26,12 +27,15 @@ function App() {
         <Switch>
           <Route path="/signup">
             <SignupForm />
-          </Route>
+            </Route>
+            <Route path='/upload-image'>
+              <Upload />
+            </Route>
+            <Route path='/'>
+            <Homepage />
+            </Route>
           </Switch>
         )}
-      </div>
-      <div >
-        <Homepage />
       </div>
       </>
   );

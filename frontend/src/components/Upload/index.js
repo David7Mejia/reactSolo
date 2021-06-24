@@ -2,11 +2,7 @@ import './Upload.css'
 import { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import * as uploadActions from "../../store/upload";
-// import * as sessionActions from "../../store/session";
 import {useHistory} from 'react-router-dom'
-// import Homepage from '../Homepage'
-
-
 
 function Upload() {
     const dispatch = useDispatch();
@@ -15,21 +11,18 @@ function Upload() {
     const sessionUser = useSelector((state) => state.session.user);
     const history = useHistory();
 
-//     const redirect = () => {
-//     history.push('/')
-// }
-
-
     const onSubmit = (e) => {
         e.preventDefault();
         let user_id = sessionUser.id;
+        let username = sessionUser.username
         history.push('/')
-        return dispatch(uploadActions.postImageThunk({ image_url, user_id, description }))
+        return dispatch(uploadActions.postImageThunk({ image_url, user_id, username, description }))
     }
     return (
+        <div className='wrapper-upload'>
 
         <form onSubmit={onSubmit} className='upload-form'>
-            <label>
+            <label className='upload-img-txt'>
                 Upload an Image
                 <br />
                 <input
@@ -49,12 +42,13 @@ function Upload() {
                     value={description}
                     onChange={e => setDescription(e.target.value)}
                     required
-                    rows="4"
-                    cols="35"
-                />
+                    rows="3"
+                    cols="30"
+                    />
             </label>
-            <button type="submit" >Upload Post!</button>
+            <button className='upload-btn' type="submit" >Upload Post!</button>
         </form>
+        </div>
     )
 
 }

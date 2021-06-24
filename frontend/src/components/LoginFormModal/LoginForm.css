@@ -17,6 +17,10 @@ body {
 .username {
   margin-top: 10px;
 }
+.username, .password {
+  height: 30px;
+  width: 200px;
+}
 form{
   display: flex;
   justify-content: center;
@@ -29,9 +33,6 @@ form{
   align-items: center;
   background-color: #313131;
   height: 25px;
-
-
-
 }
 button {
 border: none;
@@ -48,6 +49,7 @@ transition-duration: 0.4s;
 }
 
 button:hover {
-  background-color: white;
-  color: #313131
+  background-color: rgb(18, 176, 238);
+  color: #ffffff;
+  border-radius: 5px;
 }

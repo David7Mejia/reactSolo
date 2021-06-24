@@ -5,25 +5,18 @@ import { useSelector } from "react-redux";
 // import * as getImageActions from "../../store/upload";
 // import { getFeedThunk } from '../../store/upload';
 import Upload from "../Upload";
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, Router } from 'react-router-dom'
 import Posts from '../Posts';
 
 
 function Homepage() {
     const loggedIn = useSelector(state => state.session).user;
-
-//id user_id, collections_id, image_url
+    console.log(loggedIn)
     if (loggedIn) {
         return (
                 <div className='home-form'>
-                <Switch>
-                    <Route exact path='/upload-image'>
-                        <Upload />
-                    </Route>
-                </Switch>
                 <div>
                 <Posts/>
-
                 </div>
                 </div>
         )

@@ -6,11 +6,16 @@ import { useDispatch, useSelector } from "react-redux";
 function Posts() {
     const dispatch = useDispatch()
     const feedPhotos = useSelector(state => Object.values(state.img));
-
+    const loggedIn = useSelector(state => state.session).user;
+    //to use when editing or deleting post to check if current user is the owner of the post
+    console.log(`user id is this `, loggedIn.id)
     useEffect(() => {
         dispatch(getFeedThunk())
     }, [dispatch])
 
+    if (loggedIn.id === feedPhotos.user_id) {
+
+    }
 
 
     return (
@@ -18,10 +23,28 @@ function Posts() {
 
             { feedPhotos &&
                 feedPhotos.map(img => (
-                    <div key={img.id} className='feed-container'>
-                        <img src={img.image_url} className='feed-img'></img>
+                    <div key={img.id} >
+                        <div className='wrapper'>
+                        <div className='feed-container'>
+                                <img src={img.image_url} className='feed-img' />
+                        </div>
+                            <div className='img-description'>
+                                <div className='feed-username'>
+                                {img.username}
 
+                                </div>
 
+                                {
+                                loggedIn.id === img.user_id &&
+                                        <button className='delete-btn'>Edit</button>
+                                 }
+                                <br />
+                                <div className='caption'>
+                                {img.description}
+                                </div>
+                            </div>
+                        </div>
+                            <br />
                     </div>
                 ))
 
