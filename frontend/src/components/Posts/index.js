@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 function Posts() {
     const dispatch = useDispatch()
     const feedPhotos = useSelector(state => Object.values(state.img));
-    const loggedIn = useSelector(state => state.session).user;
+    // const loggedIn = useSelector(state => state.session).user;
     //to use when editing or deleting post to check if current user is the owner of the post
     // console.log(`user id is this `, loggedIn.id)
     useEffect(() => {
@@ -27,12 +27,13 @@ function Posts() {
                                     </div>
                                 </Link>
                             <div className='img-description'>
-                                <div className='feed-username'>{img.username}</div>
+                                <div className='feed-username'>{img.username}
+                                <div className='caption'>{img.description}</div></div>
 
-                                {loggedIn.id === img.user_id &&
-                                        <button to='' className='delete-btn'>EDIT</button>}
-                                <br />
-                                <div className='caption'>{img.description}</div>
+                                {/* {loggedIn.id === img.user_id &&
+                                        <button to='' className='delete-btn'>EDIT</button>} */}
+
+                                {/* <div className='caption'>{img.description}</div> */}
                             </div>
                         </div>
                             <br />

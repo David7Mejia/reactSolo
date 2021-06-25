@@ -6,7 +6,7 @@ import { getPostThunk } from '../../store/upload'
 
 function SinglePost() {
     const dispatch = useDispatch()
-    // const loggedIn = useSelector(state => state.session.user);
+    const loggedIn = useSelector(state => state.session).user;
     const feedPhotos = useSelector(state => (state.img));
     const { id } = useParams();
     const img = feedPhotos[id]
@@ -23,8 +23,10 @@ function SinglePost() {
                 <div className="img-container">
                     <div className="this-post">
                     <img src={img?.image_url} className="img-post" />
-                        <div className='feed-username' id='post-username'>{img?.username}</div>
+                        <div className='feed-username' id='post-username'>{img?.username}{loggedIn.id === img.user_id &&
+                                        <button to='' className='delete-btn'>EDIT</button>}</div>
                         <div className="post-description">{img?.description}</div>
+
                     </div>
                 </div>
         </div>
