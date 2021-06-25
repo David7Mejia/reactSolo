@@ -13,10 +13,6 @@ function Posts() {
         dispatch(getFeedThunk())
     }, [dispatch])
 
-    if (loggedIn.id === feedPhotos.user_id) {
-
-    }
-
 
     return (
         <div className='test'>

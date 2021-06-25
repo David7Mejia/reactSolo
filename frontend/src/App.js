@@ -2,7 +2,7 @@
 import './index.css'
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, useLocation  } from "react-router-dom";
 import * as sessionActions from "./store/session";
 import SignupForm from "./components/SignupFormModal";
 import Navigation from "./components/Navigation";
@@ -17,6 +17,11 @@ function App() {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
+ const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return (
     <>
       <div>

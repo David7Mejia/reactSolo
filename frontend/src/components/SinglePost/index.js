@@ -18,17 +18,16 @@ function SinglePost() {
 
     return (
         <div className="test1">
-            <div>
-
         <div className="wrapper-post">
 
                 <div className="img-container">
+                    <div className="this-post">
                     <img src={img?.image_url} className="img-post" />
-                        <div className="post-description">jaskldjasdadasdasdasd</div>
+                        <div className='feed-username' id='post-username'>{img?.username}</div>
+                        <div className="post-description">{img?.description}</div>
+                    </div>
                 </div>
         </div>
-
-            </div>
         </div>
     )
 }
