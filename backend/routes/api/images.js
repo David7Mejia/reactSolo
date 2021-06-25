@@ -13,8 +13,8 @@ router.post('/', asyncHandler(async (req, res, next) => {
         image_url,
         description,
     })
-         res.json({myPost});
-    }),
+        return res.json(myPost);
+    })
 );
 
 router.get('/:id', asyncHandler(async (req, res) => {

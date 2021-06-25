@@ -23,8 +23,8 @@ function SinglePost() {
                 <div className="img-container">
                     <div className="this-post">
                     <img src={img?.image_url} className="img-post" />
-                        <div className='feed-username' id='post-username'>{img?.username}{loggedIn.id === img.user_id &&
-                                        <button to='' className='delete-btn'>EDIT</button>}</div>
+                        <div id='post-username'>{img?.username}{loggedIn?.id === img?.user_id &&
+                                        <button to='' id='delete-btn'>Delete</button>}</div>
                         <div className="post-description">{img?.description}</div>
 
                     </div>

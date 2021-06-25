@@ -26,16 +26,16 @@
   color: white;
   text-decoration: none;
   transition-duration: 0.4s;
-
 }
 .btns {
   display: flex;
   flex-direction: row;
   font-size: 15px;
-
-
 }
-.btn_signup{
+a.active:hover {
+  color: rgb(18, 176, 238)
+}
+.btn_signup {
   margin-left: 10px;
 }
 
@@ -67,12 +67,12 @@
   margin-right: 15px;
 }
 .nav_search :focus {
-  outline: none
+  outline: none;
 }
 
 .profile-dropdown {
   font-size: 15px;
-  color:white;
+  color: white;
   margin-bottom: px;
 }
 
@@ -82,17 +82,20 @@
 
 .upload-container {
   width: 50px;
-  height:50px;
+  height: 50px;
   margin-right: 15px;
 }
 
-.upload{
+.upload {
   background-image: url("../../images/computing-cloud.svg");
   background-size: 40px;
   background-repeat: no-repeat;
   height: 50px;
-  width:50px;
+  width: 50px;
+  transition-duration: 0.4s;
   /*
   margin-right: 30px */
-
+}
+.upload:hover {
+  background-image: url("../../images/cloud-computing.svg");
 }

@@ -24,5 +24,6 @@
   },
   "homepage": "https://github.com/David7Mejia/reactSolo#readme",
   "dependencies": {
+    "faker": "^5.5.3"
   }
 }

@@ -14,6 +14,9 @@ body {
   font-family: Proxima Nova,Helvetica,sans-serif;
   font-size: 20px;
 }
+/* .travlr:hover{
+  color: rgb(18, 176, 238)
+} */
 .username {
   margin-top: 10px;
 }

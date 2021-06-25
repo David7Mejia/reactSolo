@@ -1,83 +1,88 @@
-.posts{
-    width: 200px;
-    height: 200px;
-    background-color: blue;
-    /* background-image: url(); */
+.posts {
+  width: 200px;
+  height: 200px;
+  background-color: blue;
+  /* background-image: url(); */
 }
-.test{
-display: flex;
-justify-content: center;
-flex-direction: column-reverse;
-align-content: center;
-flex-wrap: wrap;
-width: 97vw;
-/* background-color: white */
+.test {
+  display: flex;
+  justify-content: center;
+  flex-direction: column-reverse;
+  align-content: center;
+  flex-wrap: wrap;
+  width: 97vw;
+  /* background-color: white */
 }
 
-.test:last-child{
-    padding-top: 100px;
+.test:last-child {
+  padding-top: 100px;
 }
 .feed-img {
-    display: flex;
-    margin-top: 20px;
-    width: 100%;
+  display: flex;
+  margin-top: 20px;
+  width: 100%;
+}
+.feed-img:hover {
+  background-color: rgba(0, 0, 0, 0.4);
 }
 .feed-container {
-    width: 800px;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    top: 70px;
-    align-items: flex-start;
+  width: 800px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  top: 70px;
+  align-items: flex-start;
 }
 
 .feed-username {
-    margin-top: 3px;
-    color:rgb(55, 124, 180);;
-
+  margin-top: 3px;
+  display: flex;
+  flex-direction: column;
+  color: rgb(55, 124, 180);
 }
 
 .wrapper {
-    border-radius: 5px;
-    background-color: white;
-    font-size: 20px;
-    display: flex;
-    flex-direction: column;
+  border-radius: 5px;
+  background-color: white;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
-
 .img-description {
-    /* display: flex;
+  /* display: flex;
     align-items: flex-start;
     color: #313131;
     flex-wrap: wrap;
     margin-left: 25px;
     height: 50px; */
-    display: grid;
-grid-template-areas:
+  display: grid;
+  grid-template-areas:
     "left mid right"
-    ". . ."
-    ;
-    color: #313131;
-    margin-left: 25px;
-    height: 50px;
-    margin-bottom: 35px
-
+    ". . .";
+  color: #313131;
+  margin-left: 25px;
+  height: 50px;
+  margin-bottom: 35px;
+}
+.caption {
+  color: #313131;
+  font-size: 18px;
 }
 
 .delete-btn {
-    color:#313131;
-    transition-duration: 1s;
-    grid-area: right;
-    width: 80px;
-   margin-bottom: 5px;
-   text-decoration: none;
-   font-size: 13px;
-   text-align: center;
+  color: #313131;
+  transition-duration: 1s;
+  grid-area: right;
+  width: 80px;
+  margin-bottom: 5px;
+  text-decoration: none;
+  font-size: 13px;
+  text-align: center;
 }
 
 .delete-btn:hover {
-    background-color: #313131;
-    color: white;
-    border-radius: 5px;
+  background-color: #313131;
+  color: white;
+  border-radius: 5px;
 }
