@@ -50,12 +50,6 @@
 }
 
 .img-description {
-  /* display: flex;
-    align-items: flex-start;
-    color: #313131;
-    flex-wrap: wrap;
-    margin-left: 25px;
-    height: 50px; */
   display: grid;
   grid-template-areas:
     "left mid right"

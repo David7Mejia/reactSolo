@@ -1,10 +1,10 @@
-import { csrfFetch } from './csrf';
+import { csrfFetch, restoreCSRF } from './csrf';
 
 const POST_IMAGE = 'upload/POST_IMAGE';
 const GET_FEED = 'upload/GET_FEED';
 const DELETE_IMAGE = 'upload/DELETE_IMAGE'
 const GET_POST = 'upload/GET_POST'
-
+const UPDATE_POST = 'upload/UPDATE_POST';
 
 export const getFeed = (img) => ({
     type: GET_FEED,
@@ -23,7 +23,12 @@ export const getPost = (img) => ({
     img
 })
 
+export const updatePost = (img) => ({
+    type: UPDATE_POST,
+    img
+})
 
+//CREATE
 export const postImageThunk = payload => async(dispatch) => {
     const res = await csrfFetch('api/images', {
         method: 'POST',
@@ -36,6 +41,7 @@ export const postImageThunk = payload => async(dispatch) => {
         return newImg
     }
 }
+//READ
 export const getFeedThunk = () => async(dispatch) => {
     const res = await csrfFetch('/api/images')
     if (res.ok) {
@@ -51,6 +57,22 @@ export const getPostThunk = id => async (dispatch) => {
         dispatch(getPost(image))
     }
 }
+//UPDATE
+export const updatePostThunk = (id, description) => async (dispatch) => {
+    // console.log(`IMAGE CHANGE UPLOAD JS::::`, id);
+    // console.log(`IMAGE DESC UPLOAD JS::::`, description);
+    const res = await csrfFetch(`/api/images/${id}`, {
+        method: 'PATCH',
+        body: JSON.stringify({id, description})
+    })
+    if (res.ok) {
+        const data = await res.json();
+        dispatch(updatePost(data))
+        return data
+    }
+}
+
+//DELETE
 export const deleteImageThunk = id => async (dispatch) => {
     const res = await csrfFetch(`/api/images/${id}`, {
         method: 'DELETE',
@@ -80,7 +102,7 @@ const imgReducer = (state = initialState, action) => {
             return { ...state, ...newState }
         case DELETE_IMAGE:
             newState = { ...state }
-            delete newState.img[action.id]//action.img.id
+            delete newState[action.id]//action.img.id
             return newState
         case GET_POST:
             newState[action.img.id] = action.img
@@ -88,6 +110,12 @@ const imgReducer = (state = initialState, action) => {
                 ...state,
                 ...newState
             }
+        case UPDATE_POST:
+            newState = {
+                ...state
+                [action.img.id] = action.img
+            }
+            return newState
         default:
             return state;
     }

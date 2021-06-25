@@ -9,6 +9,7 @@ import Navigation from "./components/Navigation";
 import Homepage from "./components/Homepage";
 import Upload from "./components/Upload";
 import SinglePost from "./components/SinglePost";
+import EditPost from './components/EditPost';
 
 function App() {
   const dispatch = useDispatch();
@@ -34,6 +35,9 @@ function App() {
             </Route>
             <Route path='/upload-image'>
               <Upload />
+            </Route>
+            <Route path='/edit-image'>
+              <EditPost />
             </Route>
             <Route exact path='/'>
             <Homepage />

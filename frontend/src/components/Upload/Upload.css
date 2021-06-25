@@ -1,5 +1,5 @@
 .upload-form {
-    position: relative;
+    position: absolute;
     /* margin-left: 300px; */
     /* margin-top: 300px; */
     top: 300px;
@@ -34,5 +34,5 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #313131
+    background-color: #302b2b
 }

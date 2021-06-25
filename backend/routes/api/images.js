@@ -31,21 +31,21 @@ router.get('/', asyncHandler(async (req, res, next) => {
 }),
 );
 
-router.put('/', asyncHandler(async (req, res) => {
-    const { image_url, user_id, description, id, username } = req.body;
-
-    const photo = await Image.findByPk(id);
-    let updImg = await photo.update({ image_url, user_id, username, description, id });
-    res.json(updImg)
+router.patch('/:id', asyncHandler(async (req, res) => {
+    const { description } = req.body;
+    const id = parseInt(req.params.id);
+    console.log(`!!!!!!!!!!!!!!!!!!!!!!!`, description)
+    const img = await Image.findByPk( id  )
+    const data = await img.update({description})
+   return res.json(data)
 }))
 
 router.delete('/:id', asyncHandler(async (req, res) => {
-    const { id } = req.body
-
+    const { id } = req.params
     const del = await Image.destroy({
         where: { id }
     })
-    res.json(del)
+    res.json({del})
 }))
 //dispatch to in helper function
 //before useeffect then dispatch

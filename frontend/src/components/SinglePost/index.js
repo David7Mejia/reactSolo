@@ -1,16 +1,23 @@
 import './SinglePost.css'
 import { useEffect } from 'react'
-import { useParams } from 'react-router'
+import { useParams, useHistory } from 'react-router'
 import { useSelector, useDispatch } from 'react-redux'
-import { getPostThunk } from '../../store/upload'
+import { getPostThunk, deleteImageThunk, updatePostThunk } from '../../store/upload'
+import EditPost from '../EditPost'
 
 function SinglePost() {
+    const history = useHistory()
     const dispatch = useDispatch()
     const loggedIn = useSelector(state => state.session).user;
     const feedPhotos = useSelector(state => (state.img));
     const { id } = useParams();
     const img = feedPhotos[id]
 
+
+    const deletePost = id => {
+        dispatch(deleteImageThunk(id))
+        history.push('/')
+    }
 
     useEffect(() => {
         dispatch(getPostThunk(id))
@@ -23,8 +30,14 @@ function SinglePost() {
                 <div className="img-container">
                     <div className="this-post">
                     <img src={img?.image_url} className="img-post" />
-                        <div id='post-username'>{img?.username}{loggedIn?.id === img?.user_id &&
-                                        <button to='' id='delete-btn'>Delete</button>}</div>
+                        <div id='post-username'>
+                            {img?.username}
+                            {loggedIn?.id === img?.user_id &&
+
+                                <button onClick={() => deletePost(id)} id='delete-btn'>Delete</button>}
+                            <EditPost post={ img }/>
+                        </div>
+
                         <div className="post-description">{img?.description}</div>
 
                     </div>

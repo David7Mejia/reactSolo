@@ -10,9 +10,9 @@ function Homepage() {
     if (loggedIn) {
         return (
                 <div className='home-form'>
-                <div>
+
                 <Posts/>
-                </div>
+               
                 </div>
         )
     } else {

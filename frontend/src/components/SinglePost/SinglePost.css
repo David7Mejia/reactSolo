@@ -25,22 +25,28 @@ align-items: center;
 .this-post{
     display:flex;
     flex-direction: column;
+    background-color: white;
+    /* rgb(207, 204, 204); */
+    border-radius: 8px;
+
 
 }
 #post-username{
-    /* margin-top: 3px; */
   display: flex;
   justify-content: space-between;
   color: rgb(55, 124, 180);
  margin-top:10px;
 font-size: 25px;
+    margin-left: 10px;
+
 }
 .post-description {
+    margin-left: 10px;
     margin-top: 10px;
     font-size: 20px;
-    color: white;
+    color: #313131;
     display: flex;
-    /* background-color: red; */
+    margin-bottom: 20px;
     height: auto;
     width: auto;
 }
@@ -54,11 +60,12 @@ font-size: 25px;
 }
 
 #delete-btn {
-    color: white;
-    transition-duration: 0.3s
+    color: #313131;
+    transition-duration: 0.3s;
+    margin-right: 10px;
 }
 
 #delete-btn:hover{
-    background-color:white;
-    color: #313131
+    background-color:#313131;
+    color: white
 }
