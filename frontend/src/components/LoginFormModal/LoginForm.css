@@ -37,7 +37,7 @@ form{
   background-color: #313131;
   height: 25px;
 }
-button {
+#main-btn {
 border: none;
 color: white;
 text-align: center;
@@ -51,7 +51,7 @@ height: 36px;
 transition-duration: 0.4s;
 }
 
-button:hover {
+#main-btn:hover {
   background-color: rgb(18, 176, 238);
   color: #ffffff;
   border-radius: 5px;

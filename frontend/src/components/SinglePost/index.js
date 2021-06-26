@@ -3,7 +3,8 @@ import { useEffect } from 'react'
 import { useParams, useHistory } from 'react-router'
 import { useSelector, useDispatch } from 'react-redux'
 import { getPostThunk, deleteImageThunk, updatePostThunk } from '../../store/upload'
-import EditPost from '../EditPost'
+import EditPost from '../EditPost';
+import EditButton from './EditButton'
 
 function SinglePost() {
     const history = useHistory()
@@ -14,10 +15,6 @@ function SinglePost() {
     const img = feedPhotos[id]
 
 
-    const deletePost = id => {
-        dispatch(deleteImageThunk(id))
-        history.push('/')
-    }
 
     useEffect(() => {
         dispatch(getPostThunk(id))
@@ -33,9 +30,10 @@ function SinglePost() {
                         <div id='post-username'>
                             {img?.username}
                             {loggedIn?.id === img?.user_id &&
-
-                                <button onClick={() => deletePost(id)} id='delete-btn'>Delete</button>}
-                            <EditPost post={ img }/>
+                                <div>
+                                    <EditButton btn={id} />
+                                </div>
+                            }
                         </div>
 
                         <div className="post-description">{img?.description}</div>

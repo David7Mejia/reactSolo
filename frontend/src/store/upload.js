@@ -55,20 +55,20 @@ export const getPostThunk = id => async (dispatch) => {
     if (res.ok) {
         const image = await res.json();
         dispatch(getPost(image))
+        return image
     }
 }
 //UPDATE
 export const updatePostThunk = (id, description) => async (dispatch) => {
-    // console.log(`IMAGE CHANGE UPLOAD JS::::`, id);
-    // console.log(`IMAGE DESC UPLOAD JS::::`, description);
+
     const res = await csrfFetch(`/api/images/${id}`, {
-        method: 'PATCH',
+        method: 'PUT',
         body: JSON.stringify({id, description})
     })
     if (res.ok) {
         const data = await res.json();
-        dispatch(updatePost(data))
-        return data
+        dispatch(getPost(data))
+        // return data
     }
 }
 
@@ -84,7 +84,8 @@ export const deleteImageThunk = id => async (dispatch) => {
     }
 }
 
-const initialState = {}
+const initialState = {feed: null}
+
 
 const imgReducer = (state = initialState, action) => {
     let newState = {}
@@ -99,7 +100,10 @@ const imgReducer = (state = initialState, action) => {
             action.img.forEach(photo => {
                 newState[photo.id] = photo;
             })
-            return { ...state, ...newState }
+            return {
+                 ...newState
+            }
+
         case DELETE_IMAGE:
             newState = { ...state }
             delete newState[action.id]//action.img.id
@@ -107,7 +111,7 @@ const imgReducer = (state = initialState, action) => {
         case GET_POST:
             newState[action.img.id] = action.img
             return {
-                ...state,
+                // ...state,
                 ...newState
             }
         case UPDATE_POST:

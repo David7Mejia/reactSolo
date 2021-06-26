@@ -31,10 +31,9 @@ router.get('/', asyncHandler(async (req, res, next) => {
 }),
 );
 
-router.patch('/:id', asyncHandler(async (req, res) => {
+router.put('/:id', asyncHandler(async (req, res) => {
     const { description } = req.body;
     const id = parseInt(req.params.id);
-    console.log(`!!!!!!!!!!!!!!!!!!!!!!!`, description)
     const img = await Image.findByPk( id  )
     const data = await img.update({description})
    return res.json(data)

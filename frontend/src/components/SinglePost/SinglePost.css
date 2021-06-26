@@ -1,71 +1,118 @@
 .test1 {
-    display:flex;
-    justify-content: center;
-    top: 100px;
-    width: 98vw;
-    padding-top: 100px
+  display: flex;
+  justify-content: center;
+  top: 100px;
+  width: 98vw;
+  padding-top: 100px;
 }
 .img-container {
-display: flex;
-flex-direction: column;
-margin-bottom: 100px;
-margin-top: 30px;
-justify-content:center;
-align-content: center;
-align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+  margin-top: 30px;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 .feed-username {
-    display:flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
-.img-post{
-    height: auto;
-    width: 65vw
+.img-post {
+  height: auto;
+  width: 65vw;
 }
-.this-post{
-    display:flex;
-    flex-direction: column;
-    background-color: white;
-    /* rgb(207, 204, 204); */
-    border-radius: 8px;
-
-
+.this-post {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  /* rgb(207, 204, 204); */
+  border-radius: 8px;
 }
-#post-username{
+#post-username {
   display: flex;
   justify-content: space-between;
   color: rgb(55, 124, 180);
- margin-top:10px;
-font-size: 25px;
-    margin-left: 10px;
-
+  margin-top: 10px;
+  font-size: 25px;
+  margin-left: 10px;
 }
 .post-description {
-    margin-left: 10px;
-    margin-top: 10px;
-    font-size: 20px;
-    color: #313131;
-    display: flex;
-    margin-bottom: 20px;
-    height: auto;
-    width: auto;
+  margin-left: 10px;
+  margin-top: 10px;
+  font-size: 20px;
+  color: #313131;
+  display: flex;
+  margin-bottom: 20px;
+  height: auto;
+  width: 50%;
 }
 
 .wrapper-post {
-    display: flex;
-    justify-content: center;
-    width: 70%;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 8px
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
 }
 
-#delete-btn {
-    color: #313131;
-    transition-duration: 0.3s;
-    margin-right: 10px;
+.delete-btn {
+  background-color: transparent;
+  color: #313131;
+  transition-duration: 0.3s;
+  margin-right: 10px;
+  text-decoration: none;
+  border: 0;
 }
 
-#delete-btn:hover{
-    background-color:#313131;
-    color: white
+.delete-btn:hover {
+  background-color: #ce2323;
+  color: white;
 }
+
+#elipses {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../images/elipsis-vertical.svg");
+  background-size: 20px;
+  background-repeat: no-repeat;
+  height: 30px;
+  width: 30px;
+  transition-duration: 0.4s;
+}
+
+#elipses:hover {
+  background-image: url("../../images/read-more.svg");
+  background-color: none;
+}
+
+.edit-menu {
+  display:flex;
+flex-direction: row;
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+align-content: flex-start;
+  height: 50px;
+  width: 70px;
+  margin-right: 15px;
+  margin-top:5px;
+
+}
+
+.edit-dropdown {
+  font-size: 15px;
+  color: white;
+  margin-bottom: px;
+}
+.edit-btn {
+  display:flex;
+  background-color: transparent;
+  color: #313131;
+  transition-duration: 0.3s;
+  text-decoration: none;
+  border: 0;
+}
+/* #42A2C6
+048EAC*/
