@@ -1,21 +1,29 @@
 import './Comments.css'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import * as commentActions from "../../store/comment";
-import {useParams} from 'react-router'
+// import * as commentActions from "../../store/comment";
+import { useParams } from 'react-router'
+import { getCommentThunk, postCommentThunk } from '../../store/comment'
+
 
 function Comments() {
     const dispatch = useDispatch()
     const [commentBody, setCommentBody] = useState('')
     const loggedIn = useSelector(state => state.session).user;
-    // const postComments = useSelector(state => (state.cmnt)); ######################
+    const postComments = useSelector(state => (state.cmnt));
     const { id } = useParams()
     const newId = Number(id)
+
+    console.log(postComments)
+
+    useEffect(() => {
+        dispatch(getCommentThunk(id))
+    }, [dispatch, id])
 
     const onSubmit = (e) => {
         e.preventDefault();
         let user_id = loggedIn.id;
-        return dispatch(commentActions.postCommentThunk({ image_id: newId, user_id, comment: commentBody }))
+        return dispatch(postCommentThunk({ image_id: newId, user_id, comment: commentBody }))
     }
 
     return (

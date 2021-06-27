@@ -20,7 +20,10 @@ router.post('/', asyncHandler(async (req, res, next) => {
 router.get('/:id', asyncHandler(async (req, res) => {
     const id = parseInt(req.params.id);
     const photo = await Image.findByPk(id)
-
+    // const cmnts = await Comment.findAll({
+    //     where: {image_id: id}
+    // })
+    // console.log(`!!!!!!!!!!!!`,cmnts)
     return res.json(photo)
 }))
 

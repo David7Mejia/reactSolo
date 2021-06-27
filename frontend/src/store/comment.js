@@ -19,27 +19,27 @@ export const deleteComment = (id) => ({
 
 //CREATE
 export const postCommentThunk = payload => async(dispatch) => {
-    console.log(`fewewfwefwefefw`,payload)
     const res = await csrfFetch('/api/comments', {
         method: 'POST',
         body: JSON.stringify(payload),
     })
-    // if (res.ok) {
-        const newComnt = await res.json();
-        dispatch(postComment(newComnt));
-        return newComnt
-    // }
+    const newComnt = await res.json();
+    dispatch(postComment(newComnt));
+    return newComnt
 }
 //READ
-export const getCommentThunk= () => async(dispatch) => {
-    const res = await csrfFetch('/api/comments')
+export const getCommentThunk= (id) => async(dispatch) => {
+    const res = await csrfFetch(`/api/comments/${id}`)
+    console.log(`############`, res)
+
     if (res.ok) {
-        const allComnts = await res.json();
-        dispatch(getComment(allComnts))
+        const allComments = await res.json()
+        dispatch(getComment(allComments))
+
     }
+    // console.log(`!!!!!!!!!!!!!!!!!!!!!!!!!!!`, res)
 }
 export const updateCommentThunk = (id, comment) => async (dispatch) => {
-
     const res = await csrfFetch(`/api/comments/${id}`, {
         method: 'PUT',
         body: JSON.stringify({id, comment})
@@ -47,18 +47,17 @@ export const updateCommentThunk = (id, comment) => async (dispatch) => {
     if (res.ok) {
         const data = await res.json();
         dispatch(getComment(data))
-        // return data
     }
 }
 
 //DELETE
-export const deleteCommentThunk = id => async (dispatch) => {
+export const deleteCommentThunk = (id) => async (dispatch) => {
     const res = await csrfFetch(`/api/comments`, {
         method: 'DELETE',
     })
     if (res.ok) {
         await res.json()
-        dispatch(deleteComment(id))
+        dispatch(deleteComment())
         return res
     }
 }
@@ -76,12 +75,11 @@ const comntReducer = (state = initialState, action) => {
             }
             return newState
         case GET_COMMENT:
-            action.comnt.forEach(com => {
+            action.comnt.forEach((com) => {
                 newState[com.id] = com;
             })
-            return {
-                 ...newState
-            }
+            return {...newState}
+
         case DELETE_COMMENT:
             newState = { ...state }
             delete newState[action.id]//action.img.id
