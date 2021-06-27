@@ -30,16 +30,17 @@ export const updatePost = (img) => ({
 
 //CREATE
 export const postImageThunk = payload => async(dispatch) => {
-    const res = await csrfFetch('api/images', {
+    const res = await csrfFetch('/api/images', {
         method: 'POST',
         body: JSON.stringify(payload),
     })
 
-    if (res.ok) {
-        const newImg = await res.json();
+    // if (res.ok) {
+    const newImg = await res.json();
+
         dispatch(postImage(newImg));
-        return newImg
-    }
+        // return newImg
+
 }
 //READ
 export const getFeedThunk = () => async(dispatch) => {

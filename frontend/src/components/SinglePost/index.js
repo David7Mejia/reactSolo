@@ -2,6 +2,7 @@ import './SinglePost.css'
 import { useEffect } from 'react'
 import { useParams, useHistory } from 'react-router'
 import { useSelector, useDispatch } from 'react-redux'
+import Comments from '../Comments'
 import { getPostThunk, deleteImageThunk, updatePostThunk } from '../../store/upload'
 import EditPost from '../EditPost';
 import EditButton from './EditButton'
@@ -11,6 +12,7 @@ function SinglePost() {
     const dispatch = useDispatch()
     const loggedIn = useSelector(state => state.session).user;
     const feedPhotos = useSelector(state => (state.img));
+    console.log(feedPhotos)
     const { id } = useParams();
     const img = feedPhotos[id]
 
@@ -37,7 +39,8 @@ function SinglePost() {
                         </div>
 
                         <div className="post-description">{img?.description}</div>
-
+                        <div> <Comments />
+                        </div>
                     </div>
                 </div>
         </div>
