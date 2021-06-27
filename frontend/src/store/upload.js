@@ -34,12 +34,8 @@ export const postImageThunk = payload => async(dispatch) => {
         method: 'POST',
         body: JSON.stringify(payload),
     })
-
-    // if (res.ok) {
     const newImg = await res.json();
-
-        dispatch(postImage(newImg));
-        // return newImg
+    dispatch(postImage(newImg));
 
 }
 //READ

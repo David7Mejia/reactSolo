@@ -10,11 +10,12 @@ function Comments() {
     const dispatch = useDispatch()
     const [commentBody, setCommentBody] = useState('')
     const loggedIn = useSelector(state => state.session).user;
-    const postComments = useSelector(state => (state.cmnt));
+    const postComments = useSelector(state => Object.values(state.cmnt));
     const { id } = useParams()
     const newId = Number(id)
 
-    console.log(postComments)
+
+    console.log(`@@@@@@@@@@@@@@@@@@@@@@@@@@@@`, loggedIn)
 
     useEffect(() => {
         dispatch(getCommentThunk(id))
@@ -41,6 +42,15 @@ function Comments() {
                     </label>
                     <button id='comment-btn' className='main-btn' type='submit'>Post Comment</button>
             </form>
+            <div className='all-comments'>
+                {postComments &&
+                    postComments.map(com => (
+                        <div key={com?.id}>
+                            {com.user_id }{com.comment}
+                        </div>
+                    ))}
+
+            </div>
         </div>
     )
 }
