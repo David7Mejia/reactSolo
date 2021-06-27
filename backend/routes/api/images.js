@@ -2,7 +2,7 @@ const express = require('express');
 const asyncHandler = require('express-async-handler');
 const router = express.Router();
 
-const { Image, User } = require('../../db/models')
+const { Image, User, Comment } = require('../../db/models')
 
 router.post('/', asyncHandler(async (req, res, next) => {
     const { user_id, image_url, username, description } = req.body;
@@ -41,6 +41,7 @@ router.put('/:id', asyncHandler(async (req, res) => {
 
 router.delete('/:id', asyncHandler(async (req, res) => {
     const { id } = req.params
+    await Comment.destroy({where: {image_id: id}})
     const del = await Image.destroy({
         where: { id }
     })

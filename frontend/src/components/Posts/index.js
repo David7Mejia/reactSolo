@@ -3,17 +3,13 @@ import { useEffect } from 'react';
 import { getFeedThunk } from '../../store/upload';
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from 'react-router-dom'
-import { useHistory } from 'react-router'
 
 function Posts() {
     const dispatch = useDispatch()
     const feedPhotos = useSelector(state => Object.values(state.img));
-    // console.log(`@@@@@@@@@@@@@@@@@@@@`,feedPhotos)
-    const history = useHistory()
 
     useEffect(() => {
         dispatch(getFeedThunk())
-        // history.push('/')
     }, [dispatch])
 
 

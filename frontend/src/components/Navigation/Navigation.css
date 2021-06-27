@@ -35,7 +35,7 @@
 a.active:hover {
   color: rgb(18, 176, 238)
 }
-.btn_signup {
+#btn_signup {
   margin-left: 10px;
 }
 

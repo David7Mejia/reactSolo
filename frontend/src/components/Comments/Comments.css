@@ -1,0 +1,29 @@
+.comment-wrapper {
+  width: 500px;
+}
+.comment-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: 10px;
+  width: 500px;
+}
+.post-comment {
+  height: 30px;
+  border-radius: 3px;
+  border-color: #ffffff;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  outline: 0;
+  border-style: solid;
+  transition-duration: 0.7s;
+}
+.post-comment:focus-within {
+  outline: none;
+  /* border:2px; */
+  border-color: rgb(18, 176, 238);
+  /* box-shadow: 0 0 10px #719ECE; */
+}
+#comment-btn{
+  height: 30px;
+}

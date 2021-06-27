@@ -29,15 +29,13 @@ form{
   justify-content: center;
   flex-direction: column;
 }
-.btn {
+#btn {
   margin-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #313131;
-  height: 25px;
 }
-#main-btn {
+.main-btn {
 border: none;
 color: white;
 text-align: center;
@@ -46,13 +44,14 @@ display: flex;
 justify-content: center;
 align-items: center;
 font-size: 16px;
-background-color: transparent;
+background-color: #313131;
 height: 36px;
 transition-duration: 0.4s;
+border-radius: 3px
 }
 
-#main-btn:hover {
+.main-btn:hover {
   background-color: rgb(18, 176, 238);
   color: #ffffff;
-  border-radius: 5px;
+  border-radius: 3px;
 }

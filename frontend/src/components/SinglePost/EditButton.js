@@ -1,12 +1,11 @@
 // frontend/src/components/Navigation/ProfileButton.js
 import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
-import * as sessionActions from '../../store/session';
 import * as uploadActions from '../../store/upload';
 import './SinglePost.css';
 import EditPost from '../EditPost'
 import { useHistory, useParams } from "react-router";
-import { getPostThunk, deleteImageThunk, updatePostThunk } from '../../store/upload'
+import { deleteImageThunk } from '../../store/upload'
 
 
 function EditButton({ img }) {
@@ -18,16 +17,18 @@ function EditButton({ img }) {
 
     useEffect(() => {
         dispatch(uploadActions.getPostThunk(id))
+    }, [dispatch, id])
 
-    }, [dispatch])
     const openMenu = () => {
         if (showMenu) return;
         setShowMenu(true);
     };
+
     const closeMenu = () => {
             if (!showMenu) return;
         setShowMenu(false);
     };
+
     const openEdit = () => {
         if (showEdit) return;
         setShowEdit(true);

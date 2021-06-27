@@ -46,7 +46,7 @@ function Upload() {
                     cols="30"
                     />
             </label>
-            <button id='main-btn' className='upload-btn' type="submit">Upload Post!</button>
+            <button className='main-btn' id='upload-btn' type="submit">Upload Post!</button>
         </form>
         </div>
     )

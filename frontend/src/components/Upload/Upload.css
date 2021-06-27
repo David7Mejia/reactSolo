@@ -17,7 +17,7 @@
     border-radius: 8px;
     border: 1px;
 }
-.upload-btn {
+#upload-btn {
     /* margin-top: 10px; */
     display: flex;
     color: #313131;
@@ -29,7 +29,7 @@
     border: 0;
     font-size:16px;
 }
-.upload-btn:hover{
+#upload-btn:hover{
 border: none;
 color: white;
 background-color: red;

@@ -92,7 +92,7 @@ function SignupForm() {
                     />
                     <br/>
             </label>
-            <button id='main-btn' type="submit">Sign Up</button>
+            <button className='main-btn' type="submit">Sign Up</button>
         </form>
                     </div>
     );

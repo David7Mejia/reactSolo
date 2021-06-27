@@ -1,4 +1,4 @@
-import { csrfFetch, restoreCSRF } from './csrf';
+import { csrfFetch } from './csrf';
 
 const POST_IMAGE = 'upload/POST_IMAGE';
 const GET_FEED = 'upload/GET_FEED';
