@@ -6,13 +6,12 @@ import Posts from '../Posts';
 
 function Homepage() {
     const loggedIn = useSelector(state => state.session).user;
-    console.log(loggedIn)
     if (loggedIn) {
         return (
                 <div className='home-form'>
 
                 <Posts/>
-               
+
                 </div>
         )
     } else {

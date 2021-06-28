@@ -35,7 +35,6 @@ export const postCommentThunk = payload => async(dispatch) => {
 //READ
 export const getCommentThunk= (id) => async(dispatch) => {
     const res = await csrfFetch(`/api/comments/${id}`)
-    // console.log(`############`, res)
 
     if (res.ok) {
         const allComments = await res.json()
@@ -44,7 +43,6 @@ export const getCommentThunk= (id) => async(dispatch) => {
     }
 }
 export const updateCommentThunk = (id, comment) => async (dispatch) => {
-    console.log(id)
     const res = await csrfFetch(`/api/comments/${id}`, {
         method: 'PUT',
         body: JSON.stringify({id, comment})

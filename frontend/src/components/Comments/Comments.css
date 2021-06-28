@@ -1,12 +1,12 @@
 .comment-wrapper {
-  width: 500px;
+  width: 320px;
 }
 .comment-form {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   margin-left: 10px;
-  width: 500px;
+  width: 320px;
 }
 .post-comment {
   height: 30px;
@@ -26,4 +26,59 @@
 }
 #comment-btn{
   height: 30px;
+}
+.holder{
+  width: 200px;
+  height:30px;
+}
+.all-comments{
+display: flex;
+flex-direction: column;
+margin-left: 10px
+}
+.txt-area{
+
+}
+.comment-flex {
+  display: flex;
+
+}
+.com-cont{
+  width: 70;
+  display:flex;
+}
+
+.edit-comm-drop{
+
+  width:200px;
+  height:200px
+
+}
+#del-btn-com{
+margin-left: 10px;
+width:50px;
+}
+.edit-pen{
+  background-color: white;
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  border: 0;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  height: 30px;
+  width: 30px;
+  transition-duration: 0.4s;
+  background-image: url("../../images/edit1.svg")
+}
+
+.edit-menu-comm{
+   display:flex;
+flex-direction: row;
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+align-content: flex-start;
+width:30px;
 }

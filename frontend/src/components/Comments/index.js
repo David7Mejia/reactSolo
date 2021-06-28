@@ -14,7 +14,7 @@ function Comments() {
     const postComments = useSelector(state => Object.values(state.cmnt));
     const sessionUser = useSelector((state) => state.session.user);
     const { id } = useParams()
-    const newId = Number(id)
+    // const newId = Number(id)
 
     useEffect(() => {
         dispatch(getCommentThunk(id))
@@ -23,7 +23,7 @@ function Comments() {
     useEffect(() => {
         dispatch(getPostThunk(id))
     }, [dispatch, id])
-    
+
     const deleteComment = id => {
         dispatch(deleteCommentThunk(id))
     }
@@ -56,17 +56,20 @@ function Comments() {
             <div className='all-comments'>
                 {postComments &&
                     postComments.map(com => (
-                        <div key={com?.id}>
-                            {com?.username} {com?.comment}
+                        <div className='comment-flex' key={com?.id}>
+
+                            {com?.username}: {com?.comment}
+                            <div className='holder'>
                             {
                                 loggedIn?.id === com?.user_id &&
-                                <div>
-                            <button onClick={()=> deleteComment(com?.id)}>Delete</button>
-                            <button>Edit</button>
-                                    {/* {<EditComment ids={ com?.id}/>} */}
-                                    <EditCommentBtn />
+                                <div className='com-cont'>
+                            <button className='delete-btn' id='del-btn-com' onClick={()=> deleteComment(com?.id)}>Delete</button>
+                                    <EditCommentBtn ids={ com?.id}/>
                                 </div>
                             }
+
+
+                            </div>
                         </div>
                     ))}
 

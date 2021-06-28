@@ -2,9 +2,12 @@ import { useState, useEffect } from 'react';
 import { useDispatch } from "react-redux";
 import {useParams, useHistory} from 'react-router'
 import {updateCommentThunk, getCommentThunk} from "../../store/comment";
-import {getPostThunk} from "../../store/upload";
+import { getPostThunk } from "../../store/upload";
+import '../Comments/Comments.css'
+
 
 function EditComment({ids}) {
+    const {id} = useParams()
     const dispatch = useDispatch();
     const [comment, setComment] = useState('')
     // const { id } = useParams()
@@ -12,9 +15,13 @@ function EditComment({ids}) {
     // console.log(id)
     const onSubmit = e => {
         e.preventDefault();
-        dispatch(updateCommentThunk(13, comment))
+        dispatch(updateCommentThunk(ids, comment))
         // history.push(`/images/${id}`)
     }
+    useEffect(() => {
+                dispatch(getCommentThunk(id))
+
+    })
 
     return (
         <div className='wrapper-upload'>
@@ -25,7 +32,7 @@ function EditComment({ids}) {
 
             </label>
             <label>
-                <textarea
+                <textarea className='txt-area'
                     placeholder='Comment'
                     type='text'
                     value={comment}
