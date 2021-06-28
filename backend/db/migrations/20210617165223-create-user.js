@@ -13,6 +13,9 @@ module.exports = {
         allowNull: false,
         unique: true,
       },
+      // avatar: {
+      //   type: Sequelize.TEXT,
+      // },
       firstName: {
         type: Sequelize.STRING(30),
         allowNull: false,

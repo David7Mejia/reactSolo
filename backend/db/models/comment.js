@@ -2,6 +2,7 @@
 module.exports = (sequelize, DataTypes) => {
   const Comment = sequelize.define('Comment', {
     user_id: DataTypes.INTEGER,
+    username: DataTypes.STRING,
     image_id: DataTypes.INTEGER,
     comment: DataTypes.TEXT
   }, {});

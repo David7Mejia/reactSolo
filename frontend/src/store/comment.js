@@ -3,6 +3,7 @@ import { csrfFetch } from './csrf';
 const POST_COMMENT = 'comment/POST_COMMENT';
 const GET_COMMENT = 'comment/GET_COMMENT';
 const DELETE_COMMENT = 'comment/DELETE_COMMENT'
+const UPDATE_COMMENT = 'comment/UPDATE_COMMENT'
 
 export const postComment = (comnt) => ({
     type: POST_COMMENT,
@@ -15,6 +16,10 @@ export const getComment = (comnt) => ({
 export const deleteComment = (id) => ({
     type: DELETE_COMMENT,
     id
+})
+export const updateComment = (comnt) => ({
+    type: UPDATE_COMMENT,
+    comnt
 })
 
 //CREATE
@@ -35,27 +40,29 @@ export const getCommentThunk= (id) => async(dispatch) => {
     if (res.ok) {
         const allComments = await res.json()
         dispatch(getComment(allComments))
+        return allComments
     }
 }
 export const updateCommentThunk = (id, comment) => async (dispatch) => {
+    console.log(id)
     const res = await csrfFetch(`/api/comments/${id}`, {
         method: 'PUT',
         body: JSON.stringify({id, comment})
     })
     if (res.ok) {
         const data = await res.json();
-        dispatch(getComment(data))
+        dispatch(updateComment(data))
     }
 }
 
 //DELETE
 export const deleteCommentThunk = (id) => async (dispatch) => {
-    const res = await csrfFetch(`/api/comments`, {
+    const res = await csrfFetch(`/api/comments/${id}`, {
         method: 'DELETE',
     })
     if (res.ok) {
         await res.json()
-        dispatch(deleteComment())
+        dispatch(deleteComment(id))
         return res
     }
 }
@@ -73,7 +80,7 @@ const comntReducer = (state = initialState, action) => {
             }
             return newState
         case GET_COMMENT:
-            action.comnt.forEach((com) => {
+            action.comnt.forEach(com => {
                 newState[com.id] = com;
             })
             return {...newState}
@@ -82,6 +89,12 @@ const comntReducer = (state = initialState, action) => {
             newState = { ...state }
             delete newState[action.id]//action.img.id
             return newState
+        case UPDATE_COMMENT:
+            newState[action.comnt.id] = action.comnt
+            return {
+                // ...state,
+                ...newState
+            }
         default:
             return state;
     }
