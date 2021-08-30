@@ -124,3 +124,17 @@
   align-content: flex-start;
   width: 30px;
 }
+
+.edit-comment-form {
+  width: 300px;
+  height: 180px;
+  color: white;
+  background-color: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  top: 50%;
+  transform: translate(-49%, -49%);
+  left: 50%;
+  position: fixed;
+}

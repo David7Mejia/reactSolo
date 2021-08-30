@@ -1,5 +1,5 @@
 // frontend/src/components/Navigation/ProfileButton.js
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useDispatch } from 'react-redux';
 import * as uploadActions from '../../store/upload';
 import './SinglePost.css';
@@ -14,6 +14,8 @@ function EditButton({ img }) {
     const dispatch = useDispatch();
     const [showMenu, setShowMenu] = useState(false);
     const [showEdit, setShowEdit] = useState(false);
+    const modalRef = useRef();
+
 
     useEffect(() => {
         dispatch(uploadActions.getPostThunk(id))
@@ -38,40 +40,30 @@ function EditButton({ img }) {
         setShowEdit(false);
     };
 
-  const deletePost = id => {
+    const deletePost = id => {
         dispatch(deleteImageThunk(id))
         history.push('/')
     }
-    useEffect(() => {
-        if (!showMenu) return;
-        const closeMenu = () => {
-            setShowMenu(false);
-        };
-        return () => document.removeEventListener("click", closeMenu);
-    }, [showMenu]);
 
     useEffect(() => {
-        if (!showEdit) return;
-
-        const closeEdit = () => {
-            setShowEdit(false);
-        };
-
-        return () => document.removeEventListener("click", closeEdit);
-    }, [showEdit]);
+        document.addEventListener("mousedown", (e) => {
+            if (!modalRef?.current?.contains(e.target)) {
+                setShowMenu(false);
+            }
+        });
+ });
 
     return (
         <div className='edit-menu'>
             <button className='edit-btn'id="elipses" onClick={showMenu === true ? closeMenu : openMenu } >
-                {/* <div id="elipses" /> */}
             </button>
             {showMenu && (
-                <div className="edit-dropdown">
+                <div className="edit-dropdown" ref={modalRef}>
                     <button onClick={() => deletePost(id)} className='delete-btn'>Delete</button>
                     <button onClick={showEdit === true ? closeEdit : openEdit} className='delete-btn' id='edit-btn'>Edit</button>
                     {showEdit && (
                         <EditPost post={img} />
-                    )}
+                        )}
                 </div>
             )}
         </div>
@@ -79,3 +71,25 @@ function EditButton({ img }) {
 }
 
 export default EditButton;
+
+
+/*
+useEffect(() => {
+    if (!showMenu) return;
+    const closeMenu = () => {
+        setShowMenu(false);
+    };
+    return () => document.removeEventListener("click", closeMenu);
+}, [showMenu]);
+
+useEffect(() => {
+    if (!showEdit) return;
+
+    const closeEdit = () => {
+        setShowEdit(false);
+    };
+
+    return () => document.removeEventListener("click", closeEdit);
+}, [showEdit]);
+
+*/
