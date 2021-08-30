@@ -1,13 +1,19 @@
 .comment-wrapper {
-  width: 320px;
+  width: 90%;
 }
+
 .comment-form {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
   margin-left: 10px;
-  width: 320px;
+  width: 100%;
 }
+
+.comment-label {
+  width: 80%;
+}
+
 .post-comment {
   height: 30px;
   border-radius: 3px;
@@ -15,54 +21,82 @@
   margin-right: 10px;
   margin-bottom: 5px;
   outline: 0;
+  width: 100%;
+  flex-grow: 1;
   border-style: solid;
   transition-duration: 0.7s;
 }
+
 .post-comment:focus-within {
   outline: none;
   /* border:2px; */
   border-color: rgb(18, 176, 238);
   /* box-shadow: 0 0 10px #719ECE; */
 }
-#comment-btn{
+
+#comment-btn {
   height: 30px;
 }
-.holder{
+
+.holder {
   width: 200px;
-  height:30px;
+  height: 30px;
 }
-.all-comments{
-display: flex;
-flex-direction: column;
-margin-left: 10px
-}
-.txt-area{
 
-}
-.comment-flex {
+.all-comments {
   display: flex;
-
+  flex-direction: column;
+  margin-left: 10px
 }
-.com-cont{
+
+.txt-area {}
+
+.comment-flex {
+  justify-content: space-between;
+  display: flex;
+}
+
+.com-cont {
+  margin-left: 20px;
   width: 70;
-  display:flex;
+  display: flex;
 }
 
-.edit-comm-drop{
-
-  width:200px;
-  height:200px
-
+.edit-comm-drop {
+  width: 200px;
+  height: 200px
 }
-#del-btn-com{
-margin-left: 10px;
-width:50px;
+
+#del-btn-com {
+  margin-left: 10px;
+  height: 30px;
+  width: 30px;
+  background-color: transparent;
+  color: #313131;
+  transition-duration: 0.3s;
+  margin-right: 10px;
+  text-decoration: none;
+  border: 0;
+  background-image: url('../../images/cancel.svg');
+  background-repeat: no-repeat;
+  background-size: 15px;
+  background-position: center;
+  cursor: pointer;
+  border-radius: 5px;
 }
-.edit-pen{
+
+#del-btn-com:hover {
+  background-color: #ce23239f;
+  color: white;
+  border-radius: 5px;
+}
+
+.edit-pen {
   background-color: white;
-   display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 5px;
   padding: 0;
   border: 0;
   background-size: 20px;
@@ -70,15 +104,23 @@ width:50px;
   height: 30px;
   width: 30px;
   transition-duration: 0.4s;
-  background-image: url("../../images/edit1.svg")
+  background-image: url("../../images/edit1.svg");
+  background-position: center;
+  cursor: pointer;
 }
 
-.edit-menu-comm{
-   display:flex;
-flex-direction: row;
-flex-wrap: wrap;
-align-items: center;
-justify-content: center;
-align-content: flex-start;
-width:30px;
+.edit-pen:hover {
+  background-color: #048dac9f;
+  color: white;
+  border-radius: 5px;
+}
+
+.edit-menu-comm {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  align-content: flex-start;
+  width: 30px;
 }

@@ -31,7 +31,8 @@ function Comments() {
     const onSubmit = (e) => {
         e.preventDefault();
         let user_id = loggedIn.id;
-        let username = sessionUser.username
+        let username = sessionUser.username;
+        setCommentBody('')
         return dispatch(postCommentThunk({ image_id: id, user_id, comment: commentBody, username }))
     }
 
@@ -40,7 +41,7 @@ function Comments() {
 
         <div className="comment-wrapper">
             <form onSubmit={onSubmit} className="comment-form">
-                <label className='comment-label'>
+                <div className='comment-label'>
                     <input
                     placeholder='Type your comment...'
                     className='post-comment'
@@ -49,7 +50,7 @@ function Comments() {
                     onChange={e => setCommentBody(e.target.value)}
                     required
                     />
-                    </label>
+                    </div>
                     <button id='comment-btn' className='main-btn' type='submit'>Post Comment</button>
             </form>
         </div>
@@ -63,8 +64,8 @@ function Comments() {
                             {
                                 loggedIn?.id === com?.user_id &&
                                 <div className='com-cont'>
-                            <button className='delete-btn' id='del-btn-com' onClick={()=> deleteComment(com?.id)}>Delete</button>
                                     <EditCommentBtn ids={ com?.id}/>
+                            <button  id='del-btn-com' onClick={()=> deleteComment(com?.id)}></button>
                                 </div>
                             }
 
