@@ -1,7 +1,7 @@
 .profile{
     /* position: relative; */
-    padding-top: 150px;
-    justify-content: space-between;
+    /* padding-top: 150px; */
+    justify-content: flex-start;
     height: 300px;
     /* width: auto; */
     /* margin: auto; */
@@ -13,6 +13,7 @@
 }
 
 .center-images-div{
+    flex-direction: column;
     display: flex;
     justify-content: center;
 }
@@ -28,6 +29,43 @@
     margin-top: 10px;
     height: 300px;
 
+}
+
+.profile-username{
+    position: relative;
+    /* top: 25%; */
+    /* height: 50px; */
+    font-size: 45px;
+    display: flex;
+    align-content: center;
+    /* text-align: center; */
+    width: auto;
+    margin-top: 0;
+    margin-left: 25px;
+    height: 100px;
+    top: 20px;
+    align-items: baseline;
+
+}
+
+.user-info-holder{
+    background-color: rgb(255, 255, 255);
+    height: 100px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    margin-top: 100px;
+    margin-left: 5%;
+    margin-right: 5%;
+
+    width: 50%;
+}
+
+.post-count{
+    font-size: 30px;
+    /* background-color: blue; */
+    margin-left: 30px;
+    /* width: 100px;
+    height: 20px */
 }
 
 /* .to-profile:a{
