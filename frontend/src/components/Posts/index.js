@@ -14,29 +14,33 @@ function Posts() {
 
 
     return (
-        <div className='test'>
-
-            { feedPhotos &&
-                feedPhotos.map(img => (
-                    <div key={img?.id} >
-                        <div className='wrapper'>
-                                <Link to={`/images/${img?.id}`}>
-                                    <div className='feed-container'>
-                                        <img src={img?.image_url} className='feed-img' alt='feed-img'/>
-                                    </div>
-                                </Link>
-                            <div className='img-description'>
-                                <div className='feed-username'>{img?.username}
-                                <div className='caption'>{img?.description}</div></div>
-                            </div>
-                        </div>
-                            <br />
-                    </div>
-                ))
-
-            }
-        </div>
-    )
+      <div className="test">
+        {console.log(feedPhotos)}
+        {feedPhotos &&
+          feedPhotos.map((img) => (
+            <div key={img?.id}>
+              <div className="wrapper">
+                <Link to={`/images/${img?.id}`}>
+                  <div className="feed-container">
+                    <img
+                      src={img?.image_url}
+                      className="feed-img"
+                      alt="feed-img"
+                    />
+                  </div>
+                </Link>
+                <div className="img-description">
+                  <div className="feed-username">
+                    <Link to={`/user/${img?.user_id}`} className='to-profile'> {img?.username}</Link>
+                    <div className="caption">{img?.description}</div>
+                  </div>
+                </div>
+              </div>
+              <br />
+            </div>
+          ))}
+      </div>
+    );
 }
 
 export default Posts

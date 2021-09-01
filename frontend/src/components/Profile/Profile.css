@@ -26,7 +26,12 @@
 .profile-pics{
     width: 450px;
     margin-top: 10px;
+    height: 300px;
 
 }
+
+/* .to-profile:a{
+    text-decoration: none;
+} */
 
 /*! feed-image needs to be default size on feed when there are no images or are null */

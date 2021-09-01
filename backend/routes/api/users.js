@@ -43,4 +43,17 @@ router.post('/', validateSignup, asyncHandler(async (req, res) => {
         });
     }),
 );
+
+
+//User Info
+
+router.get(
+  "/info/:id",
+  asyncHandler(async (req, res) => {
+    const id = req.params.id;
+    const info = await User.findByPk(id);
+
+    return res.json(info);
+  })
+);
 module.exports = router;
