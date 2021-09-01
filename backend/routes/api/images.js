@@ -17,6 +17,18 @@ router.post('/', asyncHandler(async (req, res, next) => {
     })
 );
 
+router.get(
+  '/user/:id',
+  asyncHandler(async (req, res) => {
+      const id = req.params.id;
+      const pix = await Image.findAll({ where: { user_id: id } })
+
+          ;
+    return res.json(pix);
+  })
+);
+
+
 router.get('/:id', asyncHandler(async (req, res) => {
     const id = parseInt(req.params.id);
     const photo = await Image.findByPk(id)

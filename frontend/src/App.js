@@ -10,6 +10,7 @@ import Homepage from "./components/Homepage";
 import Upload from "./components/Upload";
 import SinglePost from "./components/SinglePost";
 import EditPost from './components/EditPost';
+import Profile from './components/Profile';
 
 function App() {
   const dispatch = useDispatch();
@@ -44,6 +45,9 @@ function App() {
             </Route>
             <Route path='/images/:id'>
               <SinglePost />
+            </Route>
+            <Route path='/user/:id'>
+              <Profile />
             </Route>
           </Switch>
         )}

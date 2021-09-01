@@ -1,0 +1,32 @@
+.profile{
+    /* position: relative; */
+    padding-top: 150px;
+    justify-content: space-between;
+    height: 300px;
+    /* width: auto; */
+    /* margin: auto; */
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    position: center;
+}
+
+.center-images-div{
+    display: flex;
+    justify-content: center;
+}
+
+.profile-images{
+    display: flex;
+    flex-direction: row;
+    width: 450px;
+}
+
+.profile-pics{
+    width: 450px;
+    margin-top: 10px;
+
+}
+
+/*! feed-image needs to be default size on feed when there are no images or are null */
