@@ -16,9 +16,23 @@ function Homepage() {
         )
     } else {
         return (
-            <div className='img1'>
-                <div>
-                </div>
+                <div className='slideshow-container'>
+
+
+  <div class="slide-container img1">
+  </div>
+
+  <div class="slide-container img2">
+
+  </div>
+
+  <div class="slide-container img3">
+  </div>
+
+  <div class="slide-container img4">
+  </div>
+
+
             </div>
         )
     };
