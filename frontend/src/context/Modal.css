@@ -5,6 +5,7 @@ body {
 }
 #modal {
   position: fixed;
+  z-index: 20;
   top: 0;
   right: 0;
   left: 0;
@@ -24,6 +25,7 @@ body {
 }
 
 #modal-content {
+  z-index: 20;
   position: absolute;
   background-color:white;
   border-radius: 8px;
