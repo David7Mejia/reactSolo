@@ -12,6 +12,8 @@ function ProfileButton({ user }) {
     const loggedIn = useSelector(state => state.session).user;
     const history = useHistory()
 
+
+    console.log(loggedIn)
     useEffect(() => {
         if (!loggedIn) history.push('/')
     })
@@ -23,13 +25,17 @@ function ProfileButton({ user }) {
 
 
     return (
-        <div className='drop_menu'>
-            <Link className='main-btn' to={`/user/${loggedIn.id}`} >
+      <div className="drop_menu">
+        <Link className="main-btn" to={`/user/${loggedIn.id}`}>
                 <i className="fas fa-user-circle" />
-            </Link>
+                &nbsp;
+          {loggedIn.username}
+        </Link>
 
-<button className='main-btn' onClick={logout}>Log Out</button>
-        </div>
+        <button className="main-btn" onClick={logout}>
+          Log Out
+        </button>
+      </div>
     );
 }
 

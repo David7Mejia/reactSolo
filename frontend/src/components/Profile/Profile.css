@@ -5,8 +5,8 @@
     height: 300px;
     /* width: auto; */
     /* margin: auto; */
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 4.5%;
+    margin-right: 4.5%;
     display: flex;
     flex-wrap: wrap;
     position: center;
@@ -22,6 +22,8 @@
     display: flex;
     flex-direction: row;
     width: 450px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .profile-pics{

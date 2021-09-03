@@ -14,10 +14,11 @@ function EditComment({ids}) {
     const onSubmit = (e) => {
       e.preventDefault();
       dispatch(updateCommentThunk(ids, comment));
-    };
+  };
+
     useEffect(() => {
       dispatch(getCommentThunk(id));
-    });
+    }, []);
 
     return (
       <div className="wrapper-upload">

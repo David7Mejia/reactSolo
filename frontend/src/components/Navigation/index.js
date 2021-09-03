@@ -15,13 +15,13 @@ function Navigation({ isLoaded }) {
         sessionLinks = (
             <>
                 <NavLink exact to="/">Travlr</NavLink>
-                    <label>
+                    {/* <label>
                         <input
                             className='nav_search'
                             type='text'
                             placeholder='Search...'
                         />
-                        </label>
+                        </label> */}
                 <div className='btns'>
                     <NavLink to='/upload-image' className='upload-container'>
                         <div className='upload'></div>
@@ -34,13 +34,13 @@ function Navigation({ isLoaded }) {
         sessionLinks = (
                 <>
                 <NavLink exact to="/">Travlr</NavLink>
-                <label>
+                {/* <label>
                     <input
                         className='nav_search'
                         type='text'
                         placeholder='Search...'
                     />
-                </label>
+                </label> */}
                 <div className='btns'>
                 <LoginFormModal />
                 <SignUpFormModal />
