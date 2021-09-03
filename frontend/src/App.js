@@ -47,7 +47,7 @@ function App() {
               <SinglePost />
             </Route>
             <Route path='/user/:id'>
-              <Profile />
+              <Profile  />
             </Route>
           </Switch>
         )}

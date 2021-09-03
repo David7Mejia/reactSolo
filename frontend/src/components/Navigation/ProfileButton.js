@@ -1,10 +1,12 @@
 // frontend/src/components/Navigation/ProfileButton.js
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import {Link} from 'react-router-dom';
+import {Link, Redirect, NavLink} from 'react-router-dom';
 import * as sessionActions from '../../store/session';
 import '../Navigation/Navigation.css';
-import {useHistory} from 'react-router'
+import {userInfoThunk, getUserThunk} from '../../store/user'
+import {useHistory, useParams} from 'react-router'
+import { render } from "react-dom";
 
 
 function ProfileButton({ user }) {
@@ -23,13 +25,20 @@ function ProfileButton({ user }) {
     };
 
 
+
+  const toProfile = e => {
+    e.preventDefault();
+    history.push(`/user/${loggedIn.id}`);
+
+    }
+
     return (
       <div className="drop_menu">
-        <Link className="main-btn" to={`/user/${loggedIn.id}`}>
+        <button className="main-btn" onClick={toProfile}>
                 <i className="fas fa-user-circle" />
                 &nbsp;
           {loggedIn.username}
-        </Link>
+        </button>
 
         <button className="main-btn" onClick={logout}>
           Log Out
