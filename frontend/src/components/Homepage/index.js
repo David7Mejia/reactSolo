@@ -2,6 +2,7 @@ import './Homepage.css';
 import '../Navigation/Navigation.css';
 import { useSelector } from "react-redux";
 import Posts from '../Posts';
+import LandingModal from '../LandingModal';
 
 
 function Homepage() {
@@ -18,7 +19,7 @@ function Homepage() {
         return (
                 <div className='slideshow-container'>
 
-
+            <LandingModal />
   <div class="slide-container img1">
   </div>
 

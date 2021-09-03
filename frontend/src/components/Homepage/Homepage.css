@@ -6,41 +6,8 @@ body {
   background-size: 100%;
   background-repeat: no-repeat;
   height: 100vh;
-}
-
-/* .img1 {
-  background-image: url("../../images/img1.jpg");
-  animation: slide 15s infinite;
-}
-
-.img2 {
-  background-image: url("../../images/img2.jpg");
-}
-
-.img3 {
-  background-image: url("../../images/img3.jpg");
-} */
-
-.home-form {
   background-color: #302b2b;
-  width: 100vh;
 }
-
-/*
-@keyframes slide {
-  25% {
-    background-image: url("../../images/img2.jpg");
-  }
-  50% {
-    background-image: url("../../images/img3.jpg");
-  }
-  75% {
-    background-image: url("../../images/img4.jpg");
-  }
-  100% {
-    background-image: url("../../images/img1.jpg");
-  }
-} */
 
 .slideshow-container {
   position: relative;
@@ -102,4 +69,36 @@ body {
   100% {
     transform: translateX( 100%);
   }
+}
+
+.landing-modal {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  /* border: 3px solid red; */
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 50vw;
+  top: 20%;
+  border-radius: 5px;
+  height: 50%;
+  margin-left: 15px;
+}
+
+.welcome-msg {
+  font-size: 50px;
+}
+
+.welcome-desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 25px;
+}
+
+.desc-about {
+  font-size: 20px;
 }
