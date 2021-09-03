@@ -13,7 +13,6 @@ function Profile() {
     const profileImages = useSelector(state => state?.user)?.user
     const profileUser = useSelector((state) => state?.info)?.info;
 
-console.log('21312313123123', profileImages)
     useEffect(() => {
         dispatch(getUserThunk(userId))
     }, [])

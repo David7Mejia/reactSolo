@@ -6,7 +6,7 @@ import { getPostThunk } from "../../store/upload";
 import '../Comments/Comments.css'
 
 
-function EditComment({ids}) {
+function EditComment({ids, comnt}) {
     const {id} = useParams()
     const dispatch = useDispatch();
     const [comment, setComment] = useState("");
@@ -27,7 +27,7 @@ function EditComment({ids}) {
           <label>
             <textarea
               className="txt-area"
-              placeholder="Comment"
+              placeholder={comnt}
               type="text"
               value={comment}
               onChange={(e) => setComment(e.target.value)}

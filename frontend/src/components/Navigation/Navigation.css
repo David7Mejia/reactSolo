@@ -98,3 +98,7 @@ a.active:hover {
 .upload:hover {
   background-image: url("../../images/cloud-computing.svg");
 }
+
+#demo-btn{
+  margin-left: 10px;
+}

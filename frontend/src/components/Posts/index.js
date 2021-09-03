@@ -15,7 +15,6 @@ function Posts() {
 
     return (
       <div className="test">
-        {console.log(feedPhotos)}
         {feedPhotos &&
           feedPhotos.map((img) => (
             <div key={img?.id}>

@@ -13,7 +13,6 @@ function ProfileButton({ user }) {
     const history = useHistory()
 
 
-    console.log(loggedIn)
     useEffect(() => {
         if (!loggedIn) history.push('/')
     })

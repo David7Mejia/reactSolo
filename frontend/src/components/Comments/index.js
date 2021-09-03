@@ -58,13 +58,12 @@ function Comments() {
                 {postComments &&
                     postComments.map(com => (
                         <div className='comment-flex' key={com?.id}>
-
                             {com?.username}: {com?.comment}
                             <div className='holder'>
                             {
                                 loggedIn?.id === com?.user_id &&
                                 <div className='com-cont'>
-                                    <EditCommentBtn ids={ com?.id}/>
+                                    <EditCommentBtn ids={ com?.id} comnt={com?.comment}/>
                             <button  id='del-btn-com' onClick={()=> deleteComment(com?.id)}></button>
                                 </div>
                             }

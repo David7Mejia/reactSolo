@@ -7,7 +7,7 @@ import { useParams } from "react-router";
 import {getCommentThunk} from "../../store/comment"
 
 
-function EditCommentBtn({ ids }) {
+function EditCommentBtn({ ids, comnt }) {
     const { id } = useParams();
     const dispatch = useDispatch();
     const [showMenu, setShowMenu] = useState(false);
@@ -43,7 +43,7 @@ function EditCommentBtn({ ids }) {
             </button>
             {showMenu && (
                 <div className="edit-dropdown" ref={modalRef}>
-                    <EditComment ids={ids }/>
+                    <EditComment ids={ids } comnt={comnt}/>
                 </div>
             )}
         </div>
