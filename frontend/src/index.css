@@ -1,4 +1,20 @@
 /* TODO Add site wide styles */
+
 body {
     background-color: #302b2b
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background-color: rgb(135, 136, 138);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.616);
+    border-radius: 5px;
 }

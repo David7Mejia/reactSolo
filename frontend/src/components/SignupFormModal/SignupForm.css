@@ -33,3 +33,8 @@ form {
 #signup-btn{
 margin-right: 0;
 }
+
+#upload-form{
+  height: 250px;
+  justify-content: space-evenly;
+}
