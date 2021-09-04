@@ -35,23 +35,26 @@ function Navigation({ isLoaded }) {
         );
     } else {
         sessionLinks = (
-                <>
-                <NavLink exact to="/">Travlr</NavLink>
-                {/* <label>
+            <>
+            <NavLink exact to="/" className='travlr-home'>
+              Travlr
+            </NavLink>
+            {/* <label>
                     <input
                         className='nav_search'
                         type='text'
                         placeholder='Search...'
                     />
                 </label> */}
-                <div className='btns'>
-                <LoginFormModal />
-                    <SignUpFormModal />
-                    <button className='main-btn' id='demo-btn' onClick={demo} >
-                        Demo
-                    </button>
-                </div>
-                </>
+            <div className="btns">
+              <LoginFormModal />
+              <SignUpFormModal />
+              <button className="main-btn" id="demo-btn" onClick={demo}>
+                Demo
+              </button>
+
+            </div>
+          </>
         );
     }
 

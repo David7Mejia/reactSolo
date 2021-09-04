@@ -9,7 +9,6 @@ import {Link} from 'react-router-dom';
 
 function Profile() {
   const userId = useParams().id
-  console.log('PROFILE USER',userId)
     const dispatch = useDispatch()
     const profileImages = useSelector(state => state?.user)?.user
     const profileUser = useSelector((state) => state?.info)?.info;

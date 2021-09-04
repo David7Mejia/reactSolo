@@ -1,12 +1,9 @@
 // frontend/src/components/Navigation/ProfileButton.js
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import {Link, Redirect, NavLink} from 'react-router-dom';
 import * as sessionActions from '../../store/session';
 import '../Navigation/Navigation.css';
-import {userInfoThunk, getUserThunk} from '../../store/user'
-import {useHistory, useParams} from 'react-router'
-import { render } from "react-dom";
+import {useHistory} from 'react-router'
 
 
 function ProfileButton({ user }) {
