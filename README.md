@@ -9,6 +9,4 @@
 ## Signup
  
 ## Posts/Comments
-   Users can post to the cities feed and comment on other's posts once authenticated.
-   Users can choose to edit and delete said comments and posts.
  
