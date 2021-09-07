@@ -1,4 +1,4 @@
-# Travlr
+# Travlr :airplane:
    Travlr is your photo companion when you travel. The app allows you to share your photos instantly for all users to see. Interactivity through posts include, CRUD image functionality and CRUD comment functionality. You can check out a users profile and see all their posts! Check out the live app: travlr-react.herokuapp.com
    
 # Technologies 
