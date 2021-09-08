@@ -19,37 +19,39 @@ function Upload() {
         return dispatch(uploadActions.postImageThunk({ image_url, user_id, username, description }))
     }
     return (
-        <div className='wrapper-upload'>
-
-        <form onSubmit={onSubmit} className='upload-form'>
-            <label className='upload-img-txt'>
-                Upload an Image
-                <br />
-                <input
-                    placeholder='Image URL'
-                    className='form-input-url'
-                    type='text'
-                    value={image_url}
-                    onChange={e => setImageUrl(e.target.value)}
-                    required
-                />
-            </label>
+      <div className="wrapper-upload">
+        <form onSubmit={onSubmit} className="upload-form" id='upload-form'>
+          <label className="upload-img-txt">
+            Upload an Image
             <br />
-            <label>
-                <textarea
-                    placeholder='Description'
-                    type='text'
-                    value={description}
-                    onChange={e => setDescription(e.target.value)}
-                    required
-                    rows="3"
-                    cols="30"
-                    />
-            </label>
-            <button className='main-btn' id='upload-btn' type="submit">Upload Post!</button>
+            <input
+              placeholder="Image URL"
+              className="username"
+              type="text"
+              value={image_url}
+              onChange={(e) => setImageUrl(e.target.value)}
+              required
+            />
+          </label>
+          <label>
+            <textarea
+              placeholder="Description"
+              type="text"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              required
+              rows="5"
+              cols="30"
+                        className="username"
+                        style={{height: '40px'}}
+            />
+          </label>
+          <button className="main-btn" id="upload-btn" type="submit">
+            Upload Post!
+          </button>
         </form>
-        </div>
-    )
+      </div>
+    );
 
 }
 export default Upload

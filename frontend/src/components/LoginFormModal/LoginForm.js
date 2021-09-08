@@ -54,7 +54,7 @@ function LoginForm() {
                     required
                 />
             </label>
-            <button id='btn' className='main-btn' type="submit">Log In</button>
+            <button id='btn' className='main-btn' type="submit" style={{marginRight: '0'}}>Log In</button>
         </form>
                     </div>
     );

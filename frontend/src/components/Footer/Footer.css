@@ -1,0 +1,14 @@
+.footer-container {
+    display: flex;
+    align-items: center;
+    /* flex-direction: column; */
+    justify-content: space-around;
+    background-color: rgba(0, 0, 0, 0.15);
+    width: 10%;
+    height:40px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    border-radius: 5px
+}

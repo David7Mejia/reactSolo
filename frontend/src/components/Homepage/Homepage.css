@@ -1,43 +1,104 @@
 body {
   margin: 0;
 }
-.img1, .img2, .img3, .home-form {
+
+.home-form {
   background-size: 100%;
   background-repeat: no-repeat;
   height: 100vh;
-
-}
-.img1 {
-  background-image: url("../../images/img1.jpg");
-  animation: slide 15s infinite;
-}
-.img2 {
-  background-image: url("../../images/img2.jpg");
-}
-.img3 {
-  background-image: url("../../images/img3.jpg");
+  background-color: #302b2b;
 }
 
-.home-form {
- background-color: #302b2b;
-  /* background-size: 100%;
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slide-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 7;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  transform: translateX( 100%);
   background-repeat: no-repeat;
-  */
-  width: 100vh;
+  background-image: url("../../images/img1.jpg");
+  animation: slide 16s cubic-bezier(0, 0, 0, 1) infinite;
+}
+
+.slide-container.img4 {
+  background-size: cover;
+  width: 100%;
+  z-index: 6;
+  background-image: url("../../images/img4.jpg");
+  animation-delay: 4s;
+}
+
+.slide-container.img3 {
+  background-size: cover;
+  width: 100%;
+  z-index: 5;
+  background-image: url("../../images/img3.jpg");
+  animation-delay: 8s;
+}
+
+.slide-container.img2 {
+  background-size: cover;
+  width: 100%;
+  z-index: 4;
+  background-image: url("../../images/img2.jpg");
+  animation-delay: 12s;
 }
 
 @keyframes slide {
-  25%{
-      background-image: url("../../images/img2.jpg");
+  3% {
+    transform: translateX( 0);
   }
-  50%{
-      background-image: url("../../images/img3.jpg");
+  25% {
+    transform: translateX( 0);
   }
-  75%{
-      background-image: url("../../images/img4.jpg");
+  28% {
+    transform: translateX( 100%);
   }
-  100%{
-      background-image: url("../../images/img1.jpg");
+  100% {
+    transform: translateX( 100%);
   }
 }
 
+.landing-modal {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  /* border: 3px solid red; */
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 50vw;
+  top: 20%;
+  border-radius: 5px;
+  height: 50%;
+  margin-left: 15px;
+}
+
+.welcome-msg {
+  font-size: 50px;
+}
+
+.welcome-desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 25px;
+}
+
+.desc-about {
+  font-size: 20px;
+}

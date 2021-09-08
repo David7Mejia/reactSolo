@@ -10,49 +10,58 @@ function ProfileButton({ user }) {
     const dispatch = useDispatch();
     const loggedIn = useSelector(state => state.session).user;
     const history = useHistory()
-    const [showMenu, setShowMenu] = useState(false);
 
-    const openMenu = () => {
-        if (showMenu) return;
-        setShowMenu(true);
-    };
+
     useEffect(() => {
         if (!loggedIn) history.push('/')
     })
-    useEffect(() => {
-        if (!showMenu) return;
-
-        const closeMenu = () => {
-            setShowMenu(false);
-        };
-
-        document.addEventListener('click', closeMenu);
-
-        return () => document.removeEventListener("click", closeMenu);
-    }, [showMenu]);
 
     const logout = (e) => {
         e.preventDefault();
         dispatch(sessionActions.logout());
     };
 
-    return (
-        <div className='drop_menu'>
-            <button className='main-btn' onClick={openMenu}>
-                <i className="fas fa-user-circle" />
-            </button>
-            {showMenu && (
-                <div className="profile-dropdown">
-                    {user.username}
-                    <br/>
-                    {user.email}
-                    <br/>
-                <button className='main-btn' onClick={logout}>Log Out</button>
-                </div>
 
-            )}
-        </div>
+
+  const toProfile = e => {
+    e.preventDefault();
+    history.push(`/user/${loggedIn.id}`);
+
+    }
+
+    return (
+      <div className="drop_menu">
+        <button className="main-btn" onClick={toProfile}>
+                <i className="fas fa-user-circle" />
+                &nbsp;
+          {loggedIn.username}
+        </button>
+
+        <button className="main-btn" onClick={logout}>
+          Log Out
+        </button>
+      </div>
     );
 }
 
 export default ProfileButton;
+
+/**
+ *
+ const [showMenu, setShowMenu] = useState(false);
+ const openMenu = () => {
+     if (showMenu) return;
+     setShowMenu(true);
+ };
+ useEffect(() => {
+     if (!showMenu) return;
+
+     const closeMenu = () => {
+         setShowMenu(false);
+     };
+
+     document.addEventListener('click', closeMenu);
+
+     return () => document.removeEventListener("click", closeMenu);
+ }, [showMenu]);
+ */

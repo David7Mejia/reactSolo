@@ -10,6 +10,8 @@ import Homepage from "./components/Homepage";
 import Upload from "./components/Upload";
 import SinglePost from "./components/SinglePost";
 import EditPost from './components/EditPost';
+import Profile from './components/Profile';
+import Footer from './components/Footer';
 
 function App() {
   const dispatch = useDispatch();
@@ -27,7 +29,8 @@ function App() {
     <>
       <div>
 
-      <Navigation isLoaded={isLoaded} />
+        <Navigation isLoaded={isLoaded} />
+        <Footer />
       {isLoaded && (
         <Switch>
           <Route path="/signup">
@@ -44,6 +47,9 @@ function App() {
             </Route>
             <Route path='/images/:id'>
               <SinglePost />
+            </Route>
+            <Route path='/user/:id'>
+              <Profile  />
             </Route>
           </Switch>
         )}

@@ -30,6 +30,7 @@
   border-radius: 8px;
 }
 #post-username {
+  height: 40px;
   display: flex;
   justify-content: space-between;
   color: rgb(55, 124, 180);
@@ -63,6 +64,7 @@
   margin-right: 10px;
   text-decoration: none;
   border: 0;
+  cursor: pointer;
 }
 
 .delete-btn:hover {
@@ -115,6 +117,7 @@ align-content: flex-start;
   transition-duration: 0.3s;
   text-decoration: none;
   border: 0;
+  cursor: pointer;
 }
 /* #42A2C6
 048EAC*/
