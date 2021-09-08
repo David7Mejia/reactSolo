@@ -2,7 +2,7 @@
    Travlr is your photo companion when you travel. The app allows you to share your photos instantly for all users to see on the feed page. Interactivity through posts include, CRUD image functionality and CRUD comment functionality. You can check out a users profile and see all their posts! Check out the live app: [Travlr](https://travlr-react.herokuapp.com)
    
 # Technologies 
-   Travlr uses modern React/Redux to handle frontend and state efficiently. The backend was created using NodeJS/Express with PostgreSQL utilizing the Sequelize ORM.
+   Travlr uses modern React/Redux to handle frontend and state efficiently. The backend was created using NodeJS/Express with PostgreSQL utilizing the Sequelize ORM.  
    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" title="JavaScript"><img src="https://github.com/get-icon/geticon/raw/master/icons/javascript.svg" alt="JavaScript" width="21px" height="21px"></a>
    <a href="https://reactjs.org/" title="React"><img src="https://github.com/get-icon/geticon/raw/master/icons/react.svg" alt="React" width="21px" height="21px"></a>
    <a href="https://redux.js.org/" title="Redux"><img src="https://github.com/get-icon/geticon/raw/master/icons/redux.svg" alt="Redux" width="21px" height="21px"></a>
