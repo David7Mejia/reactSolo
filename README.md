@@ -16,6 +16,7 @@
 ## Feed
    - Once authorized users will be redirected to the feed page. The feed contains all posts from all the users of the app. You may choose to navigate to a specific image by hovering over and clicking an image. This redirects the user to the posts individual page where they may see comments from other users. 
    ![feed](https://github.com/David7Mejia/travlr-react/blob/main/readme-src/feed-img.PNG)
+   ![feed](https://github.com/David7Mejia/travlr-react/blob/main/readme-src/Travlr-single-post.gif)
 ## Profiles
    - Users can go to their profile to see all uploaded pictures. Users may also see other profiles by clicking on the posts' username.  
    ![feed](https://github.com/David7Mejia/travlr-react/blob/main/readme-src/Travlr-profiles.gif)
