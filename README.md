@@ -14,6 +14,8 @@
    - Landing uses keyframes for CSS slideshow and modals for Login and Signup Components. 
 ## Feed
    - Once authorized users will be redirected to the feed page. The feed contains all posts from all the users of the app. You may choose to navigate to a specific image by hovering over and clicking an image. This redirects the user to the posts individual page where they may see comments from other users. 
+## Profiles
+   - Users can go to their profile to see all uploaded pictures. Users may also see other profiles by clicking on the posts' username.
 ## Upload & Caption Image
    - As an authorized user, users can upload an image by navigating to the corresponding navlink. (For the moment images are uploaded through URLs)
 ### Edit & Delete Image
