@@ -11,7 +11,6 @@ function EditCommentBtn({ ids, comnt }) {
     const { id } = useParams();
     const dispatch = useDispatch();
     const [showMenu, setShowMenu] = useState(false);
-    // const [showEdit, setShowEdit] = useState(false);
     const modalRef = useRef();
 
     useEffect(() => {

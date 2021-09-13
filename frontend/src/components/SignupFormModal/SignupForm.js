@@ -36,7 +36,6 @@ function SignupForm() {
             <li key={idx}>{error}</li>
           ))}
           <label className="travlr">
-            {/* Email */}
             Join Us
             <br />
             <input
@@ -49,7 +48,6 @@ function SignupForm() {
             />
           </label>
           <label>
-            {/* Username */}
             <input
               placeholder="Username"
               className="username"
@@ -61,7 +59,6 @@ function SignupForm() {
             <br />
           </label>
           <label>
-            {/* First Name */}
             <input
               placeholder="First Name"
               className="username"
@@ -73,7 +70,6 @@ function SignupForm() {
             <br />
           </label>
           <label>
-            {/* Password */}
             <input
               placeholder="Password"
               className="username"
@@ -83,9 +79,7 @@ function SignupForm() {
               required
             />
           </label>
-          {/* <br/> */}
           <label>
-            {/* Confirm Password */}
             <input
               placeholder="Confirm Password"
               className="username"

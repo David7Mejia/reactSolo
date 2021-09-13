@@ -71,25 +71,3 @@ function EditButton({ img }) {
 }
 
 export default EditButton;
-
-
-/*
-useEffect(() => {
-    if (!showMenu) return;
-    const closeMenu = () => {
-        setShowMenu(false);
-    };
-    return () => document.removeEventListener("click", closeMenu);
-}, [showMenu]);
-
-useEffect(() => {
-    if (!showEdit) return;
-
-    const closeEdit = () => {
-        setShowEdit(false);
-    };
-
-    return () => document.removeEventListener("click", closeEdit);
-}, [showEdit]);
-
-*/
