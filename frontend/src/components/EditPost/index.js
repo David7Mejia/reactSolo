@@ -15,28 +15,26 @@ function EditPost() {
          dispatch(uploadActions.updatePostThunk(id, description))
     }
     return (
-        <div className='wrapper-upload'>
-
-        <form onSubmit={onSubmit} className='upload-form'>
-            <label className='upload-img-txt'>
-                Edit Your Post
-
-            </label>
-            <label>
-                <textarea
-                    placeholder='Description'
-                    type='text'
-                    value={description}
-                    onChange={e => setDescription(e.target.value)}
-                    required
-                    rows="3"
-                    cols="20"
-                    />
-            </label>
-            <button className='upload-btn' type="submit">Post!</button>
+      <div className="wrapper-upload">
+        <form onSubmit={onSubmit} className="upload-form">
+          <label className="upload-img-txt">Edit Your Post</label>
+          <label>
+            <textarea
+              placeholder="Description"
+              type="text"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              required
+              rows="3"
+              cols="20"
+            />
+          </label>
+          <button className="upload-btn" id="upload-btn" type="submit">
+            Post!
+          </button>
         </form>
-        </div>
-    )
+      </div>
+    );
 
 }
 export default EditPost

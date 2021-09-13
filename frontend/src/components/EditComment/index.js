@@ -34,7 +34,7 @@ function EditComment({ ids, comnt }) {
             cols="20"
           />
         </label>
-        <button className="upload-btn" type="submit">
+        <button className="upload-btn" id="upload-btn" type="submit">
           Post!
         </button>
       </form>
