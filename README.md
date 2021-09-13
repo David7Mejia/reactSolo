@@ -11,22 +11,30 @@
    <a href="https://expressjs.com/" title="Express"><img src="https://github.com/get-icon/geticon/raw/master/icons/express.svg" alt="Express" width="21px" height="21px"></a>
 # Components 
 ## Landing
-   - Landing uses keyframes for CSS slideshow and modals for Login and Signup Components. 
+   - Landing uses keyframes for CSS slideshow and modals for Login and Signup Components.  
+   ![landing](https://github.com/David7Mejia/travlr-react/blob/main/readme-src/Travlr-landing-demo.gif)
 ## Feed
    - Once authorized users will be redirected to the feed page. The feed contains all posts from all the users of the app. You may choose to navigate to a specific image by hovering over and clicking an image. This redirects the user to the posts individual page where they may see comments from other users. 
+   ![feed](https://github.com/David7Mejia/travlr-react/blob/main/readme-src/feed-img.PNG)
 ## Profiles
-   - Users can go to their profile to see all uploaded pictures. Users may also see other profiles by clicking on the posts' username.
+   - Users can go to their profile to see all uploaded pictures. Users may also see other profiles by clicking on the posts' username.  
+   ![feed](https://github.com/David7Mejia/travlr-react/blob/main/readme-src/Travlr-profiles.gif)
 ## Upload & Caption Image
    - As an authorized user, users can upload an image by navigating to the corresponding navlink. (For the moment images are uploaded through URLs)
+   ![feed](https://github.com/David7Mejia/travlr-react/blob/main/readme-src/Travlr-upload.gif)
 ### Edit & Delete Image
    - By clicking on the elipses icon a drop down menu containing the edit and delete functionality appear. 
+   ![feed](https://github.com/David7Mejia/travlr-react/blob/main/readme-src/Travlr-edit-post.gif)
 ## Comments 
    - Users can read and leave their own comments on an image. 
 ### Edit & Delete Comments
-   - Users may only edit or delete their own comments. 
+   - Users may only edit or delete their own comments.  
+    ![feed](https://github.com/David7Mejia/travlr-react/blob/main/readme-src/Travlr-comments.gif)
 ## Login
    - Existing users may log in to their account or through the use of a Demo button anyone may login and interact with the site for testing purposes. 
+   - ![feed](https://github.com/David7Mejia/travlr-react/blob/main/readme-src/login-img.png)
 ## Signup
    - Signup uses secure BCrypt encryption to store hashed passwords and email info. No passwords are stored directly in the database for security purposes.
+   - ![feed](https://github.com/David7Mejia/travlr-react/blob/main/readme-src/singnup-img.png)
  
  
