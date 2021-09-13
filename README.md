@@ -29,12 +29,12 @@
    - Users can read and leave their own comments on an image. 
 ### Edit & Delete Comments
    - Users may only edit or delete their own comments.  
-    ![feed](https://github.com/David7Mejia/travlr-react/blob/main/readme-src/Travlr-comments.gif)
+   ![feed](https://github.com/David7Mejia/travlr-react/blob/main/readme-src/Travlr-comments.gif)
 ## Login
    - Existing users may log in to their account or through the use of a Demo button anyone may login and interact with the site for testing purposes. 
-   - ![feed](https://github.com/David7Mejia/travlr-react/blob/main/readme-src/login-img.png)
+   ![feed](https://github.com/David7Mejia/travlr-react/blob/main/readme-src/login-img.png)
 ## Signup
    - Signup uses secure BCrypt encryption to store hashed passwords and email info. No passwords are stored directly in the database for security purposes.
-   - ![feed](https://github.com/David7Mejia/travlr-react/blob/main/readme-src/singnup-img.png)
+   ![feed](https://github.com/David7Mejia/travlr-react/blob/main/readme-src/singnup-img.png)
  
  
