@@ -20,7 +20,8 @@
    - Users can go to their profile to see all uploaded pictures. Users may also see other profiles by clicking on the posts' username.  
    ![feed](https://github.com/David7Mejia/travlr-react/blob/main/readme-src/Travlr-profiles.gif)
 ## Upload & Caption Image
-   - As an authorized user, users can upload an image by navigating to the corresponding navlink. (For the moment images are uploaded through URLs)
+   - As an authorized user, users can upload an image by navigating to the corresponding navlink.  
+   - (For the moment images are uploaded through URLs)
    ![feed](https://github.com/David7Mejia/travlr-react/blob/main/readme-src/Travlr-upload.gif)
 ### Edit & Delete Image
    - By clicking on the elipses icon a drop down menu containing the edit and delete functionality appear. 
