@@ -1,5 +1,5 @@
 import './Profile.css'
-import {useEffect, useState} from 'react'
+import {useEffect} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import { useParams } from "react-router";
 import { getUserThunk, userInfoThunk } from "../../store/user";

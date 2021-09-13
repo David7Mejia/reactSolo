@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import EditCommentBtn from './EditCommentBtn'
 import { useParams } from 'react-router'
-import { getCommentThunk, postCommentThunk, deleteCommentThunk, editCommentThunk } from '../../store/comment'
+import { getCommentThunk, postCommentThunk, deleteCommentThunk } from '../../store/comment'
 import { getPostThunk } from '../../store/upload'
 
 
@@ -14,7 +14,6 @@ function Comments() {
     const postComments = useSelector(state => Object.values(state.cmnt));
     const sessionUser = useSelector((state) => state.session.user);
     const { id } = useParams()
-    // const newId = Number(id)
 
     useEffect(() => {
         dispatch(getCommentThunk(id))
